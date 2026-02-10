@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/main-menu.uss?fileID=7433441132597879392&amp;guid=ea5c1ab14f228b9488e99771c80362f5&amp;type=3#main-menu" />
+    <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1;">
+        <ui:VisualElement name="Container" style="flex-grow: 1; align-items: center; justify-content: center;">
+            <ui:Button text="Play" emoji-fallback-support="false" name="PlayButton" class="unity-button" />
+            <ui:Button text="Options" name="OptionsButton" />
+            <ui:Button text="Quit" emoji-fallback-support="false" name="QuitButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

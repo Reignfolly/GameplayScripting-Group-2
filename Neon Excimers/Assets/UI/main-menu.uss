@@ -1,0 +1,59 @@
+.panel {
+    background-color: rgba(0, 0, 0, 0.47);
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.unity-button {
+    background-color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgb(239, 86, 242);
+    -unity-font-definition: url("project://database/Library/unity%20default%20resources?fileID=10102&guid=0000000000000000e000000000000000&type=0#LegacyRuntime");
+    -unity-font-style: normal;
+    color: rgb(208, 0, 255);
+    -unity-text-align: middle-center;
+    background-size: 100% 100%;
+    border-left-color: rgb(217, 83, 221);
+    border-top-color: rgb(183, 36, 255);
+    border-bottom-color: rgb(194, 14, 175);
+    border-right-color: rgb(189, 102, 249);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    width: 100px;
+    height: 25px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    transition-property: scale;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.unity-button:hover {
+    background-color: rgb(174, 29, 217);
+    -unity-background-image-tint-color: rgb(183, 36, 255);
+    color: rgb(0, 0, 0);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-repeat: no-repeat no-repeat;
+    scale: 1.05 1.2;
+}
