@@ -33,6 +33,7 @@ public class MainMenuController : MonoBehaviour
     private void OnQuitButtonClicked()
     {
         // Quit the application
+        Debug.Log("Quit button clicked");
         Application.Quit();
     }
 
