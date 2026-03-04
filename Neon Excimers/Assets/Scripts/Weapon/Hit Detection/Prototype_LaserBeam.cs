@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Prototype_LaserBeam : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public bool Show_Debug_Laser = false;
     public GameObject LaserBeam_Prefab;
     void Start()
     {
@@ -43,27 +45,23 @@ public class Prototype_LaserBeam : MonoBehaviour
                 RaycastEndPoint = hit.point;
                 RaycastEndPoint.y = RaycastStartPoint.y;
 
-                // Line casts don't work
 
-                /*if (Physics.Linecast(RaycastStartPoint, RaycastEndPoint, out hit, 2))
-                {
-                    // Pew Pew
-                    Debug.Log("Pew Pew!");
-
-
-                }
-                else
-                {
-                    Debug.Log("Your laser is broken :(");
-                }
-                CreateLaserBeam(RaycastStartPoint, RaycastEndPoint);*/
 
                 Vector3 RayCastDirection = RaycastEndPoint - RaycastStartPoint;
-                if (Physics.Raycast(RaycastStartPoint, RayCastDirection, out hit, 200))
+                if (Show_Debug_Laser == true)
+                {
+                    CreateLaserBeam(RaycastStartPoint, RaycastEndPoint);
+                }
+
+                if (Physics.Raycast(RaycastStartPoint, RayCastDirection, out hit, 800))
                 {
                     // Pew Pew
                     //Debug.Log("Pew Pew!");
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log(hit.collider.gameObject.name);
+
+                    // Instantly obliterate the target
+                    Disentegrate(hit.collider.gameObject);
+
                     //Debug.Log(RaycastStartPoint);
                     //Debug.Log(RaycastEndPoint);
 
@@ -84,12 +82,25 @@ public class Prototype_LaserBeam : MonoBehaviour
         int width = 2;
         var offset = End - Start;
         var scale = new Vector3(width, offset.magnitude / 2f, width);
+        var position2 = Start;
         var position = End;
+        Vector3 scaleChange = new Vector3(0f, 10f, 0f);
 
-        //var cylinder = Instantiate(LaserBeam_Prefab, position, Quaternion.identity);
+        var Endcylinder = Instantiate(LaserBeam_Prefab, position, Quaternion.identity);
+
+        var Startcylinder = Instantiate(LaserBeam_Prefab, position2, Quaternion.identity);
+        Startcylinder.transform.localScale += scaleChange;
+
+        Startcylinder.transform.LookAt(End, Vector3.back);
         //cylinder.transform.up = offset;
         //cylinder.transform.localScale = scale;
-        Debug.DrawLine(Start, End, Color.white, 8f);
+        Debug.DrawLine(Start, End, Color.red, 8, false);
+    }
+
+    // Instantly vaporizes target. No refunds.
+    void Disentegrate(GameObject target)
+    {
+        Destroy(target);
     }
 }
 
