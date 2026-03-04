@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Prototype_LaserBeam : MonoBehaviour
+public class LaserBeeaaammm : MonoBehaviour
 {
     [Header("Laser Settings")]
     public GameObject laserPrefab;     // Prefab with LineRenderer
@@ -59,10 +59,8 @@ public class Prototype_LaserBeam : MonoBehaviour
         {
             endPoint = hit.point;
 
-            if (hit.collider.CompareTag("Enemy"))
-            {
-                Disintegrate(hit.collider.gameObject);
-            }
+            // Damage / destroy target
+            Disintegrate(hit.collider.gameObject);
         }
         else
         {

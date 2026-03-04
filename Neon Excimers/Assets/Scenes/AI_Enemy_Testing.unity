@@ -127,9 +127,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,9 +192,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -241,9 +257,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,9 +322,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,9 +387,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,9 +452,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -469,9 +517,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -526,9 +582,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -583,9 +647,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -640,9 +712,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,9 +929,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -906,9 +994,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -963,9 +1059,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1020,9 +1124,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1210,71 +1322,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2e51d6d4a1c54ec46beec42307282e46, type: 2}
   m_BuildHeightMesh: 0
---- !u!1001 &931273024
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3953143589074447623, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_Name
-      value: LaserBeam
-      objectReference: {fileID: 0}
-    - target: {fileID: 3953143589074447623, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305984258158842900, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.5457249
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -25.055162
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389428475741234379, guid: 79358748e8a1e214b937596a94924701, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79358748e8a1e214b937596a94924701, type: 3}
 --- !u!1001 &1019497427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1283,9 +1330,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1340,9 +1395,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1397,9 +1460,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1454,9 +1525,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1619,9 +1698,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1676,9 +1763,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1733,9 +1828,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1926,8 +2029,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bc9972bdcdefa42bbdd3425309ea38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Show_Debug_Laser: 0
-  LaserBeam_Prefab: {fileID: 3953143589074447623, guid: 79358748e8a1e214b937596a94924701, type: 3}
+  laserPrefab: {fileID: 605132102423912888, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+  laserRange: 30
+  laserLifetime: 0.08
+  laserWidth: 0.12
+  showDebugRay: 0
 --- !u!114 &1400060618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2082,9 +2188,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2260,9 +2374,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2317,9 +2439,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2374,9 +2504,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2431,9 +2569,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2488,9 +2634,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2545,9 +2699,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2602,9 +2764,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2659,9 +2829,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2764,9 +2942,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2821,9 +3007,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2878,9 +3072,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173969746099014947, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_Speed
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_Name
       value: Clanker
+      objectReference: {fileID: 0}
+    - target: {fileID: 7123676386572213658, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8002718080726304542, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2927,16 +3129,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b59648b7a66c534ab73c996ee66b46a, type: 3}
+--- !u!1001 &7187351440424715449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 605132102423912888, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_Name
+      value: LaserBeam
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.204488
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 284.67093
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -272.7718
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093032000209151622, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 725099b9ab31ffb4b8d63d8ac08bb342, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1650825752}
-  - {fileID: 843331128312361223}
   - {fileID: 922150456}
   - {fileID: 1400060612}
   - {fileID: 2055283125}
-  - {fileID: 931273024}
+  - {fileID: 843331128312361223}
   - {fileID: 488657555}
   - {fileID: 1395173840}
   - {fileID: 212308448}
@@ -2969,3 +3227,4 @@ SceneRoots:
   - {fileID: 1622884597}
   - {fileID: 1668966115}
   - {fileID: 1948549591}
+  - {fileID: 7187351440424715449}
