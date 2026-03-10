@@ -693,6 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 519339488}
   - component: {fileID: 519339487}
+  - component: {fileID: 519339489}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -734,6 +735,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519339489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519339486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e474a5b80fbeff140bf63075f292dba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 3
+  uiDocument: {fileID: 519339487}
+  hpIcon1Name: Cell1
+  hpIcon2Name: Cell2
+  hpIcon3Name: Cell3
 --- !u!1 &603082888
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,9 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349eb73630eea00468736088f116c1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 623198568}
-  forwardForce: 6
-  strafeForce: 6
 --- !u!65 &623198570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1336,9 +1351,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944006673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316dd90d24a7cd3439c933c90773de17, type: 3}
+  m_Script: {fileID: 11500000, guid: 22c720afc8c3f1449a06e25f9d857641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiDocument: {fileID: 1944006674}
 --- !u!1 &1961018295
 GameObject:
   m_ObjectHideFlags: 0
