@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Health_Module : MonoBehaviour
 {
 
@@ -58,6 +58,10 @@ public class Health_Module : MonoBehaviour
         if (Current_Health <= 0)
         {
             Die();
+            //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene("AI_Enemy_Testing");
+            //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
         }
     }
 
