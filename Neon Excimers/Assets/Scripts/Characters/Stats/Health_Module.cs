@@ -60,7 +60,7 @@ public class Health_Module : MonoBehaviour
             Die();
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene("AI_Enemy_Testing");
+            SceneManager.LoadScene(currentSceneIndex);
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
         }
     }
