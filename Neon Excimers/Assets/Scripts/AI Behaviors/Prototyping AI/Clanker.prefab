@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4329125528309084232}
   - component: {fileID: 1173969746099014947}
   - component: {fileID: 28521113514426873}
+  - component: {fileID: 1767406683084268360}
   m_Layer: 0
   m_Name: Clanker
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +149,18 @@ MonoBehaviour:
   AI_Target_To_Search_For: Player
   goalposts: []
   MyTarget: {fileID: 0}
+--- !u!114 &1767406683084268360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123676386572213658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63424d811b1651e4db37da95768ce8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8184985084951483157
 GameObject:
   m_ObjectHideFlags: 0
