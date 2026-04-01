@@ -22,7 +22,15 @@ public class AI_Controller : MonoBehaviour
     // Don't touch ^
 
     // This is the object the AI wants to go towards (Not its transform / position)
+    // This should be the player
     [SerializeField] private GameObject MyTarget;
+
+    // This is the enemy the AI wants to go towards and follow
+    [SerializeField] private GameObject FriendlyTarget;
+
+
+    // This variable determines AI behavior. All AI behavior types are stored in this script.
+    [SerializeField] Enemy_Types MyEnemy_AI_Type;
     void Start()
     {
         // Get Navmesh agent (component that allows AI to move to a destination)
@@ -40,15 +48,37 @@ public class AI_Controller : MonoBehaviour
             case "Goalposts":
                 move_Between_Goalposts(AI_Navigation_agent, current_Goalpost_Index, MyTarget);
                 break;
-
-
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        NavMeshAgent AI_Navigation_agent = GetComponent<NavMeshAgent>();
+        switch (MyEnemy_AI_Type)
+        {
+            case Enemy_Types.Standard:
+                // Standard enemy type
+                Begin_Standard_Behavior_Package();
+                break;
+            case Enemy_Types.Shark:
+                // Shark enemy type
+                Begin_Shark_Behavior_Package();
+                break;
+            case Enemy_Types.Bulldozer:
+                // Bulldozer enemy type
+                Begin_Bulldozer_Behavior_Package();
+                break;
+            case Enemy_Types.Medic:
+                // Medic enemy type
+                Begin_Medic_Behavior_Package();
+                break;
+            case Enemy_Types.Officer:
+                // Officer enemy type
+                Begin_Officer_Behavior_Package();
+                break;
+
+        }
+        /*NavMeshAgent AI_Navigation_agent = GetComponent<NavMeshAgent>();
         switch (AI_Target_To_Search_For)
         {
             case "Player":
@@ -57,15 +87,31 @@ public class AI_Controller : MonoBehaviour
             case "Goalposts":
                 move_Between_Goalposts(AI_Navigation_agent, current_Goalpost_Index, MyTarget);
                 break;
-
-
-        }
+        }*/
     }
 
+
+
+    // (BEGIN) Search For Target Scripts (BEGIN)
+
+
+
+
+    // [END] Search For Target Scripts [END]
+
+
+
+
+    // (BEGIN) Go To Target Scripts (BEGIN)
 
     private void doPlayer_Chase(NavMeshAgent AI_Navigation_agent, GameObject MyTarget)
     {
         AI_Navigation_agent.destination = MyTarget.transform.position;
+    }
+
+    private void doAlly_Chase(NavMeshAgent AI_Navigation_agent, GameObject FriendlyTarget)
+    {
+        AI_Navigation_agent.destination = FriendlyTarget.transform.position;
     }
 
     private void move_Between_Goalposts(NavMeshAgent AI_Navigation_agent, int current_Goalpost_Index, GameObject MyTarget)
@@ -80,5 +126,55 @@ public class AI_Controller : MonoBehaviour
         {
             AI_Navigation_agent.destination = goalposts[current_Goalpost_Index].transform.position;
         }
+    }
+
+    // [END] Go To Target Scripts [END]
+
+    void Begin_Standard_Behavior_Package()
+    {
+        // I am the Standard Enemy Type
+        // I am dumb but I am relentless
+
+        // AI: Find player position. Go to player position.
+
+        NavMeshAgent AI_Navigation_agent = GetComponent<NavMeshAgent>();
+        doPlayer_Chase(AI_Navigation_agent, MyTarget);
+
+    }
+    void Begin_Shark_Behavior_Package()
+    {
+        // I am the Shark Enemy type
+        // I am a bit smarter but predictable
+
+        // AI: move to the player, then move around them for a bit, then charge at them.
+        // Alternatively, move to the player, then immediately charge
+
+
+    }
+    void Begin_Bulldozer_Behavior_Package()
+    {
+        // I am the Bulldozer Enemy type
+        // Something something "I am the %&#$#& wall" something something
+
+        // AI: Find player, Intercept the player
+
+    }
+    void Begin_Medic_Behavior_Package()
+    {
+        // I am the Medic Enemy type
+        // I am going to heal my friends
+
+        // AI: find nearest enemy that has less than max health. Go to enemy and heal them up to max.
+        // Repeat
+
+
+
+    }
+    void Begin_Officer_Behavior_Package()
+    {
+        // I am the Officer Enemy type
+        // I am going to buff all my friends
+
+        // AI: Find the highest value teammate, follow them
     }
 }

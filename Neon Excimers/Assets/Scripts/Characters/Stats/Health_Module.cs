@@ -23,7 +23,7 @@ public class Health_Module : MonoBehaviour
     {
         // Subtracts Health from this character
         Current_Health -= Damage;
-        Debug.Log("New Health: " + Current_Health);
+        //Debug.Log("New Health: " + Current_Health);
         HealthStatus_Update();
     }
 
@@ -55,13 +55,18 @@ public class Health_Module : MonoBehaviour
         // Use this function to add health or damage Visual FX: this will be called everytime
         // the player takes damage or has health set.
         EnforceMaximumHealth();
-        if (Current_Health <= 0)
+        if (Current_Health <= 0 && this.name == "Player")
         {
-            Die();
+            // Moved the call for death to be called after we load a new scene
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
+            Die();
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
+        }
+        else if (Current_Health <= 0)
+        {
+            Die();
         }
     }
 
@@ -69,6 +74,16 @@ public class Health_Module : MonoBehaviour
     {
         // Runs when character dies. That's it.
         // Kills the character. 
+        /*var AI_Enemy_Tracker_Module = this.gameObject.GetComponent<Enemy_Spawn_Tracker>();
+        if (AI_Enemy_Tracker_Module == null)
+        {
+
+        }
+        else
+        {
+
+            AI_Enemy_Tracker_Module.YouDied();
+        }*/
         Destroy(gameObject);
     }
 }

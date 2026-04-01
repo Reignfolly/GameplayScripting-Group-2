@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1173969746099014947}
   - component: {fileID: 28521113514426873}
   - component: {fileID: 1767406683084268360}
+  - component: {fileID: -2306163005861395565}
+  - component: {fileID: 7301897707696683821}
   m_Layer: 0
   m_Name: Clanker
   m_TagString: Enemy
@@ -161,6 +163,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63424d811b1651e4db37da95768ce8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2306163005861395565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123676386572213658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2e9d0a2a75237469bff3ff9a9548ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7301897707696683821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123676386572213658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78abd44a98df1d34a9453b667b606c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Max_Health: 100
+  Current_Health: 100
 --- !u!1 &8184985084951483157
 GameObject:
   m_ObjectHideFlags: 0

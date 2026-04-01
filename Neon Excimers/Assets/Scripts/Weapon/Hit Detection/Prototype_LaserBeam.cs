@@ -114,6 +114,8 @@ public class Prototype_LaserBeam : MonoBehaviour
 
     void Disintegrate(GameObject target)
     {
-        Destroy(target);
+        var EnemyHealthModule = target.GetComponent<Health_Module>();
+        EnemyHealthModule.TakeDamage(50);
+        //Destroy(target);
     }
 }
