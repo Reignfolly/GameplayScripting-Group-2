@@ -40,6 +40,23 @@ public class Health_Module : MonoBehaviour
         return Current_Health;
     }
 
+    public int GetMaxHealth()
+    {
+        return Max_Health;
+    }
+
+    public bool HasThisCharacterTakenDamage()
+    {
+        if (Current_Health < Max_Health)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void EnforceMaximumHealth()
     {
         // Prevents characters from having more health than they should
@@ -59,13 +76,15 @@ public class Health_Module : MonoBehaviour
         {
             // Moved the call for death to be called after we load a new scene
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
+            //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            //SceneManager.LoadScene(currentSceneIndex);
             Die();
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
         }
         else if (Current_Health <= 0)
         {
+            var AI_Enemy_Tracker_Module = this.gameObject.GetComponentInChildren<Enemy_Spawn_Tracker>();
+            AI_Enemy_Tracker_Module.YouDied();
             Die();
         }
     }

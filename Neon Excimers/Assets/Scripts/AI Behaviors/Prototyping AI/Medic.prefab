@@ -14,12 +14,13 @@ GameObject:
   - component: {fileID: 4329125528309084232}
   - component: {fileID: 1173969746099014947}
   - component: {fileID: 28521113514426873}
-  - component: {fileID: 1767406683084268360}
   - component: {fileID: -2306163005861395565}
   - component: {fileID: 7301897707696683821}
-  - component: {fileID: 6237427014459724431}
+  - component: {fileID: 5371671310206221440}
+  - component: {fileID: 9164367670472075360}
+  - component: {fileID: -363186394901275056}
   m_Layer: 0
-  m_Name: Clanker
+  m_Name: Medic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +73,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c2e40fa84d53ccd428f640eac126b1fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,19 +155,7 @@ MonoBehaviour:
   PlayerAsTarget: {fileID: 0}
   AI_Navigation_agent: {fileID: 0}
   FriendlyTarget: {fileID: 0}
-  MyEnemy_AI_Type: 0
---- !u!114 &1767406683084268360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7123676386572213658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63424d811b1651e4db37da95768ce8c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  MyEnemy_AI_Type: 3
 --- !u!114 &-2306163005861395565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +182,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Max_Health: 100
   Current_Health: 100
---- !u!54 &6237427014459724431
+--- !u!135 &5371671310206221440
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123676386572213658}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 5
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.8
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9164367670472075360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123676386572213658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a717672d4801840488c64b61abf53cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Current_HealingTimer: 1
+--- !u!54 &-363186394901275056
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +224,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7123676386572213658}
   serializedVersion: 4
-  m_Mass: 0.0000001
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

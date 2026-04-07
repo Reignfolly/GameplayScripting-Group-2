@@ -1,6 +1,8 @@
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
-public class NewMonoBehaviourScript : MonoBehaviour, IEnemyTracking
+public class Enemy_Spawn_Tracker : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -20,10 +22,18 @@ public class NewMonoBehaviourScript : MonoBehaviour, IEnemyTracking
     public void YouDied()
     {
         // Once this enemy dies, it needs to go ahead and tell the GameManager that it's dead.
-        Debug.Log("I died!");
+        // Debug.Log("I died!");
         var GameManagerHolder = GameObject.Find("GameManager");
         var AI_Manager_Script = GameManagerHolder.gameObject.GetComponent<AI_GameManager>();
         AI_Manager_Script.Remove_Enemy_From_List(this.gameObject);
+    }
+
+    public List<UnityEngine.GameObject> RetrieveEnemyList()
+    {
+        var GameManagerHolder = GameObject.Find("GameManager");
+        var AI_Manager_Script = GameManagerHolder.gameObject.GetComponent<AI_GameManager>();
+        List<UnityEngine.GameObject> TheListOfEnemies = AI_Manager_Script.GiveMeEnemyList();
+        return TheListOfEnemies;
     }
 
     void onDestroy()

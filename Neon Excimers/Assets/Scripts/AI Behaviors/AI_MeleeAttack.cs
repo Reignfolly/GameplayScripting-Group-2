@@ -18,10 +18,10 @@ public class AI_MeleeAttack : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             var PlayerHealthModule = collision.gameObject.GetComponent<Health_Module>();
-            Debug.Log("I collided with the player!");
+            //Debug.Log("I collided with the player!");
             PlayerHealthModule.TakeDamage(30);
         }
         ;
-        Debug.Log("I collided with: " + collision.gameObject.name);
+        //Debug.Log("I collided with: " + collision.gameObject.name);
     }
 }

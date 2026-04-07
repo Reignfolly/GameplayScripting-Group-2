@@ -72,6 +72,11 @@ public class AI_GameManager : MonoBehaviour
         List_Of_Enemies.Remove(EnemyInQuestion);
     }
 
+    public List<UnityEngine.GameObject> GiveMeEnemyList()
+    {
+        return List_Of_Enemies;
+    }
+
     void Destroy_All_Spawned_Enemies()
     {
         // Deletes all enemies spawned in.

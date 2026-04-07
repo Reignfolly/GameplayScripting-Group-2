@@ -23,10 +23,12 @@ public class AI_Controller : MonoBehaviour
 
     // This is the object the AI wants to go towards (Not its transform / position)
     // This should be the player
-    [SerializeField] private GameObject MyTarget;
+    [SerializeField] private GameObject PlayerAsTarget;
+
+    [SerializeField] private NavMeshAgent AI_Navigation_agent;
 
     // This is the enemy the AI wants to go towards and follow
-    [SerializeField] private GameObject FriendlyTarget;
+    [SerializeField] private GameObject FriendlyTarget = null;
 
 
     // This variable determines AI behavior. All AI behavior types are stored in this script.
@@ -37,16 +39,17 @@ public class AI_Controller : MonoBehaviour
 
         // AI_Navigation_agent.destination = Navigation_Goal.transform.position;
         NavMeshAgent AI_Navigation_agent = GetComponent<NavMeshAgent>();
+        MonoBehaviour AI_Enemy_Tracker_Module = this.gameObject.GetComponentInChildren<Enemy_Spawn_Tracker>();
         switch (AI_Target_To_Search_For)
         {
             case "Player":
                 // AI Character will move to player
                 // .Find is very expensive. Should only be done on startup.
-                MyTarget = GameObject.Find("Player");
-                doPlayer_Chase(AI_Navigation_agent, MyTarget);
+                PlayerAsTarget = GameObject.Find("Player");
+                doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
                 break;
             case "Goalposts":
-                move_Between_Goalposts(AI_Navigation_agent, current_Goalpost_Index, MyTarget);
+                move_Between_Goalposts(AI_Navigation_agent, current_Goalpost_Index, PlayerAsTarget);
                 break;
         }
     }
@@ -54,6 +57,7 @@ public class AI_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AI_Navigation_agent = GetComponent<NavMeshAgent>();
         switch (MyEnemy_AI_Type)
         {
             case Enemy_Types.Standard:
@@ -82,10 +86,10 @@ public class AI_Controller : MonoBehaviour
         switch (AI_Target_To_Search_For)
         {
             case "Player":
-                doPlayer_Chase(AI_Navigation_agent, MyTarget);
+                doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
                 break;
             case "Goalposts":
-                move_Between_Goalposts(AI_Navigation_agent, current_Goalpost_Index, MyTarget);
+                move_Between_Goalposts(AI_Navigation_agent, current_Goalpost_Index, PlayerAsTarget);
                 break;
         }*/
     }
@@ -98,15 +102,71 @@ public class AI_Controller : MonoBehaviour
 
 
     // [END] Search For Target Scripts [END]
+    private GameObject SearchFor_WoundedAlly()
+    {
+        // If we already have a friendly target selected, and they need health, heal them first
+        if (FriendlyTarget != null && FriendlyTarget != this)
+        {
+            //Debug.Log("I already have a friendly target!");
+            var TargetsHealthModule = FriendlyTarget.gameObject.GetComponent<Health_Module>();
+            if (TargetsHealthModule.HasThisCharacterTakenDamage())
+            {
+                //Debug.Log("This target I have needs healing.");
+                return FriendlyTarget;
+            }
+            else
+            {
+                //Debug.Log("They're already healed up.");
+                FriendlyTarget = null;
+                return FriendlyTarget;
+            }
+        }
+        //Debug.Log("I don't have a friendly target! Finding one...");
+        // We don't have a friendly target already selected, so go ahead and find another one.
+        var AI_Enemy_Tracker_Module = this.gameObject.GetComponentInChildren<Enemy_Spawn_Tracker>();
+        var Enemies_List = AI_Enemy_Tracker_Module.RetrieveEnemyList();
+        // First, search for any enemies that have less health than their max (they've taken damage)
+        foreach (GameObject ThisEnemy in Enemies_List)
+        {
+            var TargetsHealthModule = ThisEnemy.gameObject.GetComponent<Health_Module>();
+            if (TargetsHealthModule.HasThisCharacterTakenDamage() && ThisEnemy.gameObject.name != this.gameObject.name)
+            {
+                /*Debug.Log("Found an enemy with less HP!");
+                Debug.Log("Max Health: " + TargetsHealthModule.GetMaxHealth());
+                Debug.Log("Current Health: " + TargetsHealthModule.GetHealth());
+                Debug.Log("MY NAME: " + this.gameObject.name);
+                Debug.Log("THEIR NAME: " + ThisEnemy.gameObject.name);*/
+                return ThisEnemy;
+            }
+        }
 
+        // if that fails, search for target in this list that is not itself
+        foreach (GameObject ThisEnemy in Enemies_List)
+        {
+            if (ThisEnemy.gameObject.name != this.gameObject.name)
+            {
+                //Debug.Log("Had to look for literally any enemy at all.");
+                var TargetsHealthModule = ThisEnemy.gameObject.GetComponent<Health_Module>();
+                if (TargetsHealthModule.HasThisCharacterTakenDamage())
+                {
+                    //Debug.Log("I found a random damaged enemy!");
+                    return ThisEnemy;
+                }
+            }
+        }
 
-
-
+        // If that ALSO fails somehow...return null
+        //Debug.Log("Couldn't find any enemy at all.");
+        return null;
+    }
     // (BEGIN) Go To Target Scripts (BEGIN)
 
-    private void doPlayer_Chase(NavMeshAgent AI_Navigation_agent, GameObject MyTarget)
+    private void doPlayer_Chase(NavMeshAgent AI_Navigation_agent, GameObject PlayerAsTarget)
     {
-        AI_Navigation_agent.destination = MyTarget.transform.position;
+        if (PlayerAsTarget != null)
+        {
+            AI_Navigation_agent.destination = PlayerAsTarget.transform.position;
+        }
     }
 
     private void doAlly_Chase(NavMeshAgent AI_Navigation_agent, GameObject FriendlyTarget)
@@ -114,9 +174,14 @@ public class AI_Controller : MonoBehaviour
         AI_Navigation_agent.destination = FriendlyTarget.transform.position;
     }
 
-    private void move_Between_Goalposts(NavMeshAgent AI_Navigation_agent, int current_Goalpost_Index, GameObject MyTarget)
+
+    private void do_circle_around_player()
     {
-        if (AI_Navigation_agent.remainingDistance <= 5 && MyTarget != null)
+
+    }
+    private void move_Between_Goalposts(NavMeshAgent AI_Navigation_agent, int current_Goalpost_Index, GameObject PlayerAsTarget)
+    {
+        if (AI_Navigation_agent.remainingDistance <= 5 && PlayerAsTarget != null)
         {
             Debug.Log("I made it to a goalpost!");
             current_Goalpost_Index += 1;
@@ -137,8 +202,7 @@ public class AI_Controller : MonoBehaviour
 
         // AI: Find player position. Go to player position.
 
-        NavMeshAgent AI_Navigation_agent = GetComponent<NavMeshAgent>();
-        doPlayer_Chase(AI_Navigation_agent, MyTarget);
+        doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
 
     }
     void Begin_Shark_Behavior_Package()
@@ -148,7 +212,7 @@ public class AI_Controller : MonoBehaviour
 
         // AI: move to the player, then move around them for a bit, then charge at them.
         // Alternatively, move to the player, then immediately charge
-
+        do_circle_around_player();
 
     }
     void Begin_Bulldozer_Behavior_Package()
@@ -158,6 +222,8 @@ public class AI_Controller : MonoBehaviour
 
         // AI: Find player, Intercept the player
 
+        // For now it uses same AI as the Standard enemy: this will change so that it intercepts the player
+        doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
     }
     void Begin_Medic_Behavior_Package()
     {
@@ -165,9 +231,18 @@ public class AI_Controller : MonoBehaviour
         // I am going to heal my friends
 
         // AI: find nearest enemy that has less than max health. Go to enemy and heal them up to max.
+        // Otherwise, I will charge the player
         // Repeat
-
-
+        FriendlyTarget = SearchFor_WoundedAlly();
+        if (FriendlyTarget == null)
+        {
+            doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
+        }
+        else
+        {
+            NavMeshAgent AI_Navigation_agent = GetComponent<NavMeshAgent>();
+            doAlly_Chase(AI_Navigation_agent, FriendlyTarget);
+        }
 
     }
     void Begin_Officer_Behavior_Package()
