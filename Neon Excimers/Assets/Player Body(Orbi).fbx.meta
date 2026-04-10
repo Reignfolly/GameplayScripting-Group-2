@@ -3,7 +3,182 @@ guid: 341bd6b73aa05604ebefa6919f4fa5e6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arm_p2_blinn1
+    second: {fileID: 2100000, guid: 243f09708bcd9a0498332f3c37b1c627, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arm_p2_blinn2
+    second: {fileID: 2100000, guid: 123e83773db9f774aa52a14d12829ca9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arm_p3_blinn1
+    second: {fileID: 2100000, guid: 25e3566a328d9b847ae3ce14f2df839d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arm_p3_blinn2
+    second: {fileID: 2100000, guid: 688e75841cdd44944a49f9be4336d56c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Head1_blinn3
+    second: {fileID: 2100000, guid: 513db56a65d552249afee777688b0f03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Head5_blinn3
+    second: {fileID: 2100000, guid: 0139c7f90ad4e6647b0cef7291d26931, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Head_blinn1
+    second: {fileID: 2100000, guid: b6de9c6c09c4b2e4e950f95059194f67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Head_blinn2
+    second: {fileID: 2100000, guid: a827a1a4dd0b90b4e9458e4454784b5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Head_blinn3
+    second: {fileID: 2100000, guid: 22a0a5a983de1884f9bf181ec664d76f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_blinn9
+    second: {fileID: 2100000, guid: b9db2fd1e60b83645ba5a705aa2af864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__blinn13
+    second: {fileID: 2100000, guid: ff511772cf56a9a498d02cb6e43bb298, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__blinn19
+    second: {fileID: 2100000, guid: d11ab43b2ab74dd40a9a102ae3c08a1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__blinn4
+    second: {fileID: 2100000, guid: 7654ccbd94dff514fa9938e120ca8414, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__blinn5
+    second: {fileID: 2100000, guid: 4e243b645fd09804c91bb985cc8ff4bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__blinn6
+    second: {fileID: 2100000, guid: db7908621c72c9641b267bb117ce26dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__blinn9
+    second: {fileID: 2100000, guid: 5113e98b9ef4ca5448b8d6f46fabf87c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__pasted__blinn12
+    second: {fileID: 2100000, guid: 8b564cff6c7674d48bf32abcf5b3406e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__pasted__blinn13
+    second: {fileID: 2100000, guid: 910a69010dabd9845970dc2f7b4764d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__pasted__blinn14
+    second: {fileID: 2100000, guid: af9eea593b7d48242ada7e637f1d23c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__pasted__blinn15
+    second: {fileID: 2100000, guid: 87958a8ce5790464e976ecb5fd1d2aa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_Tracks_and_Wheels_pasted__pasted__pasted__blinn6
+    second: {fileID: 2100000, guid: c55ac9ce897005d47a4cbaad63509744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_body1_blinn3
+    second: {fileID: 2100000, guid: c91d1ba5b356fd84b9e6103bbeaf7e1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_body2_blinn3
+    second: {fileID: 2100000, guid: 5af01214c22548b44a8bd3632068b479, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_body_blinn1
+    second: {fileID: 2100000, guid: 58dd8420e9e1dbf4990733d86a869e50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_body_blinn2
+    second: {fileID: 2100000, guid: ffa787357b132734ead6341bcbaf4e44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orbi_body_blinn3
+    second: {fileID: 2100000, guid: 467c6381886554d4d89f5e5a88f43d96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: dab862eb09a96a7468a4c6de0e163fb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: b0a3123f26f2ad94bb03f8f605b57666, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn4
+    second: {fileID: 2100000, guid: bac0c0a3324cce7479267a0265e3c34e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn5
+    second: {fileID: 2100000, guid: 3781359a3845ee74aa43f049760295b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn6
+    second: {fileID: 2100000, guid: 1b0e5cdc2618f3541862eb61454c9a53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn7
+    second: {fileID: 2100000, guid: ea9850adf1e9d7b4188582b10dc2ff4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__blinn6
+    second: {fileID: 2100000, guid: 24d037bef6230cc4a9c7dd38faf2c480, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__blinn7
+    second: {fileID: 2100000, guid: dbfb67010ee97be4b8e1b821651363fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: standardSurface1
+    second: {fileID: 2100000, guid: b7a0d4ed3a0bdf44abdd432bcf6bb808, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -30,7 +205,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -65,7 +240,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60

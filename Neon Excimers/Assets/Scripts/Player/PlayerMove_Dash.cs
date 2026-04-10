@@ -4,98 +4,130 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovementWithDash : MonoBehaviour
 {
-    [Header("Movement")]
-    public float moveSpeed = 6f;           // Normal move speed
-    public float acceleration = 20f;       // How fast player accelerates to target speed
+    [Header("Movement Settings")]
+    public float moveSpeed = 6f;        // How fast the player moves normally
+    public float acceleration = 20f;    // How quickly player reaches target speed (smoothness)
 
-    [Header("Dash")]
-    public float dashSpeed = 20f;          // Dash speed
-    public float dashDuration = 0.2f;      // Dash lasts this long
-    public float dashCooldown = 1.5f;      // Time before dash can be used again
+    [Header("Dash Settings")]
+    public float dashSpeed = 20f;       // Speed during dash
+    public float dashDuration = 0.2f;   // How long the dash lasts
+    public float dashCooldown = 1.5f;   // Time before player can dash again
 
-    private Rigidbody rb;
-    private PlayerInputHandler input;
+    // References
+    private Rigidbody rb;                // Player physics body
+    private PlayerInputHandler input;    // Handles input (WASD, dash, etc.)
 
-    // Dash state
-    private bool canDash = true;
-    private bool isDashing = false;
-    private Vector3 dashDirection;
+    // Dash state tracking
+    private bool canDash = true;        // Can player currently dash?
+    private bool isDashing = false;     // Is player currently dashing?
+    private Vector3 dashDirection;      // Direction of dash
 
-    // Smooth movement
+    // Used by SmoothDamp to store velocity smoothing data
     private Vector3 currentVelocity;
 
     void Awake()
     {
+        // Get components on this object
         rb = GetComponent<Rigidbody>();
         input = GetComponent<PlayerInputHandler>();
 
-        // Freeze rotation X and Z so collisions don't tilt the player
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
+        // Prevent player from tipping over due to physics
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        // Smooth movement between physics frames
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+
+        // Improves collision detection at higher speeds
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
     }
 
     void FixedUpdate()
     {
+        // FixedUpdate is used for physics-based movement
+
         if (isDashing)
         {
-            // During dash, override velocity but preserve Y so gravity still works
-            rb.linearVelocity = new Vector3(dashDirection.x * dashSpeed, rb.linearVelocity.y, dashDirection.z * dashSpeed);
+            // DASH MOVEMENT:
+            // Override normal movement and move quickly in dash direction
+            // BUT keep Y velocity so gravity still works
+
+            rb.linearVelocity = new Vector3(
+                dashDirection.x * dashSpeed,
+                rb.linearVelocity.y,
+                dashDirection.z * dashSpeed
+            );
         }
         else
         {
-            // Normal movement
+            // NORMAL MOVEMENT:
+
+            // Get input direction (WASD / controller stick)
             Vector3 targetDir = new Vector3(input.MoveInput.x, 0f, input.MoveInput.y);
 
-            // Normalize diagonal movement
+            // Prevent faster diagonal movement
             if (targetDir.magnitude > 1f)
                 targetDir.Normalize();
 
+            // Convert direction into velocity
             Vector3 targetVelocity = targetDir * moveSpeed;
 
-            // Preserve Y-velocity so gravity works
+            // Preserve gravity (Y velocity)
             targetVelocity.y = rb.linearVelocity.y;
 
-            // Smooth acceleration on X/Z, keep Y
-            rb.linearVelocity = Vector3.SmoothDamp(rb.linearVelocity, targetVelocity, ref currentVelocity, 1f / acceleration);
+            // Smooth movement (prevents instant snapping)
+            rb.linearVelocity = Vector3.SmoothDamp(
+                rb.linearVelocity,
+                targetVelocity,
+                ref currentVelocity,
+                1f / acceleration
+            );
         }
     }
 
     void Update()
     {
-        // Dash input
+        // Update is used for input detection (not physics)
+
+        // Check if player pressed dash and dash is available
         if (input.DashPressed && canDash)
         {
-            StartCoroutine(DashRoutine());
-            input.ResetDash();
+            StartCoroutine(DashRoutine()); // Start dash sequence
+            input.ResetDash();             // Prevent repeated triggering
         }
         else if (!canDash && input.DashPressed)
         {
-            // Ignore input during cooldown
+            // Ignore dash input during cooldown
             input.ResetDash();
         }
     }
 
     IEnumerator DashRoutine()
     {
+        // Disable dash availability
         canDash = false;
         isDashing = true;
 
-        // Dash in movement direction, fallback to forward
+        // Determine dash direction based on input
         Vector3 moveInput = new Vector3(input.MoveInput.x, 0f, input.MoveInput.y);
-        dashDirection = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : transform.forward;
 
-        // Wait for dash duration
+        // If no movement input, dash forward
+        dashDirection = moveInput.sqrMagnitude > 0.01f
+            ? moveInput.normalized
+            : transform.forward;
+
+        // Wait for dash duration (how long dash lasts)
         yield return new WaitForSeconds(dashDuration);
 
-        // End dash
+        // End dash state
         isDashing = false;
 
-        // Start cooldown
+        // Wait for cooldown before allowing next dash
         yield return new WaitForSeconds(dashCooldown);
+
+        // Re-enable dash
         canDash = true;
     }
 
-    // Other scripts can check if player is dashing
+    // External scripts can check if player is dashing
     public bool IsDashing() => isDashing;
 }
