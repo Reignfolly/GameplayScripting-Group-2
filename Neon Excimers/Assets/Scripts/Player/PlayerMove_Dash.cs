@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovementWithDash : MonoBehaviour
 {
+    
     [Header("Movement Settings")]
     public float moveSpeed = 6f;        // How fast the player moves normally
     public float acceleration = 20f;    // How quickly player reaches target speed (smoothness)
