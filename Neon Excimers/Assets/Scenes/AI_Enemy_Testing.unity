@@ -386,7 +386,6 @@ GameObject:
   m_Component:
   - component: {fileID: 90811883}
   - component: {fileID: 90811882}
-  - component: {fileID: 90811884}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -429,18 +428,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &90811884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90811881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8c430196e06ba4419affe8ab5c8276a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &99202372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,6 +3024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc5f11d0c489e242bbd2d7efca0e9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponStats: {fileID: 11400000, guid: 706983253e054784db91de8d4ea0a34e, type: 2}
   firePoint: {fileID: 1482546118}
   cam: {fileID: 733060944}
   laserPrefab: {fileID: 5410290667742150864, guid: e62cd9a561da77943969d6095751ebc9, type: 3}
@@ -3521,6 +3509,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8737847711287900744, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 85eaa0af91183f542adde4cb753e4cab, type: 2}
     - target: {fileID: 8737847711287900744, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
       propertyPath: dashCooldown
       value: 1.6

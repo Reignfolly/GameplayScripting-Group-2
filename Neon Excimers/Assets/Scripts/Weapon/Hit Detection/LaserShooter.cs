@@ -1,8 +1,11 @@
 using UnityEngine;
 
 public class LaserShooter : MonoBehaviour
-{
+{   
+    
     [Header("References")]
+
+    public WeaponStats weaponStats; // Reference to weapon stats ScriptableObject
     public Transform firePoint;
     public Camera cam;
     public GameObject laserPrefab;
@@ -16,8 +19,17 @@ public class LaserShooter : MonoBehaviour
     [Header("Debug")]
     public bool showDebug = false;
 
+    void PhysicsUpdate()
+    {   
+        if (weaponStats != null) {//update weapon stats from weapon stats scriptable object
+            range = weaponStats.range;      
+            damage = weaponStats.damage; 
+            width = weaponStats.area;       
+        }
+    }
     void Update()
-    {
+    {   
+
         if (Input.GetMouseButtonDown(0))
         {
             FireLaser();

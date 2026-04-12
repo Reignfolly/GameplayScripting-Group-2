@@ -5,6 +5,8 @@ using System.Collections;
 public class PlayerMovementWithDash : MonoBehaviour
 {
     
+    public PlayerStats playerStats; // Reference to player stats ScriptableObject
+    
     [Header("Movement Settings")]
     public float moveSpeed = 6f;        // How fast the player moves normally
     public float acceleration = 20f;    // How quickly player reaches target speed (smoothness)
@@ -13,7 +15,7 @@ public class PlayerMovementWithDash : MonoBehaviour
     public float dashSpeed = 20f;       // Speed during dash
     public float dashDuration = 0.2f;   // How long the dash lasts
     public float dashCooldown = 1.5f;   // Time before player can dash again
-
+    
     // References
     private Rigidbody rb;                // Player physics body
     private PlayerInputHandler input;    // Handles input (WASD, dash, etc.)
@@ -43,9 +45,16 @@ public class PlayerMovementWithDash : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-        // FixedUpdate is used for physics-based movement
-
+    {   
+        if (playerStats != null) {//update player stats from player stats scriptable object
+            moveSpeed = playerStats.moveSpeed;      
+            acceleration = playerStats.acceleration; 
+            dashSpeed = playerStats.dashSpeed;       
+            dashDuration = playerStats.dashDuration;  
+            dashCooldown = playerStats.dashCooldown;
+       
+        }
+        
         if (isDashing)
         {
             // DASH MOVEMENT:
