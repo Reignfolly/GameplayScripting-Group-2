@@ -17,8 +17,8 @@ MonoBehaviour:
   baseDashSpeed: 20
   baseDashDuration: 0.2
   baseDashCooldown: 1.5
-  moveSpeedModifier: 1
-  accelerationModifier: 1
-  dashSpeedModifier: 1
-  dashDurationModifier: 1
-  dashCooldownModifier: 1
+  moveSpeedModifier: 0
+  accelerationModifier: 0
+  dashSpeedModifier: 0
+  dashDurationModifier: 0
+  dashCooldownModifier: 0

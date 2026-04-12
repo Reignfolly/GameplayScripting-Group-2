@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4fd46dd72586a41a96a0cbfdf882fb, type: 3}
   m_Name: LaserStats
   m_EditorClassIdentifier: 
+  baserange: 25
+  basedamage: 50
+  basearea: 0.2
+  rangeModifier: 0
+  damageModifier: 0
+  areaModifier: 0
