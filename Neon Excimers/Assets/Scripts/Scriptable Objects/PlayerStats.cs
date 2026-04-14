@@ -25,7 +25,12 @@ public class PlayerStats : ScriptableObject
     public float dashCooldown { get; private set; }
 
     void OnEnable()
-    {
+    {   
+        moveSpeedModifier = 0f;
+        accelerationModifier = 0f;
+        dashSpeedModifier = 0f;
+        dashDurationModifier = 0f;
+        dashCooldownModifier = 0f;
         UpgradeRefresh();
     }
 

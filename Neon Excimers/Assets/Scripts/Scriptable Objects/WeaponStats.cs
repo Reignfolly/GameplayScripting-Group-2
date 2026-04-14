@@ -4,9 +4,9 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     [Header("Base Stats")]
-    public float baserange = 25f;
-    public float basedamage = 50f;
-    public float basearea = 0.2f;
+    public float baseRange = 25f;
+    public float baseDamage = 50f;
+    public float baseArea = 0.2f;
 
     [Header("Stat Modifiers")]
     public float rangeModifier = 0f;
@@ -19,7 +19,10 @@ public class WeaponStats : ScriptableObject
     public float area { get; private set; }
 
     void OnEnable()
-    {
+    {   
+        rangeModifier = 0f;
+        damageModifier = 0f;
+        areaModifier = 0f;
         UpgradeRefresh();
     }
 

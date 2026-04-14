@@ -35,9 +35,9 @@ public class UpgradeButtons : MonoBehaviour
         weaponStats.damageModifier += 15f;
     }
 
-    public void UpgradeArea()
+    public void UpgradeRange()
     {
-        weaponStats.areaModifier += 15f;
+        weaponStats.rangeModifier += 15f;
     }
 
     

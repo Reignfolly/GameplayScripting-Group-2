@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Health_Module : MonoBehaviour
 {
-
+    public GameFlowManager gameFlowManager;
     // The maximum amount of health this character has
     public int Max_Health = 100;
     // The character's live, current health
     public int Current_Health = 100;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private bool playerIsDead = false; //added this to stop infinite "die" calls when player health is 0 or less
+
     void Start()
     {
 
@@ -78,7 +80,11 @@ public class Health_Module : MonoBehaviour
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
             //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             //SceneManager.LoadScene(currentSceneIndex);
-            Die();
+            if (!playerIsDead){//added an extra check to stop infinite "die" calls
+                playerIsDead = true;
+                Die();
+            }
+            
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
         }
         else if (Current_Health <= 0)
@@ -103,6 +109,14 @@ public class Health_Module : MonoBehaviour
 
             AI_Enemy_Tracker_Module.YouDied();
         }*/
-        Destroy(gameObject);
+        if (this.name == "Player")
+        {
+            gameFlowManager.GameOver();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
