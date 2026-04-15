@@ -1,6 +1,6 @@
 Instructions: 
 WASD to move, Space to dash, Esc to pause, left click to shoot (you will need to click fast)
-Waves of enemies will attack you, and you need to use your laser to fend them off. As you accumulate kills, you will be prompted to select Upgrades which improve you stats so you can keep going.
+Waves of enemies will attack you, and you need to use your laser to fend them off. As you accumulate kills, you will be prompted to select Upgrades which improve your stats so you can keep going.
 
 Alpha Report:
 We got the core features of the game working. Enemies attack in waves, and as the player destroys them, they accumulate more and more powerups to make future waves more manageable. We have a variety of enemy types with there own AIs including mini bosses.
