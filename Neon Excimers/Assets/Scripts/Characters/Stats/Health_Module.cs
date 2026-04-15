@@ -9,6 +9,9 @@ public class Health_Module : MonoBehaviour
     public int Current_Health = 100;
 
     private bool playerIsDead = false; //added this to stop infinite "die" calls when player health is 0 or less
+    private bool DamageFrame = false;
+    //private float DamageFrameTimer = 0.15;
+
 
     void Start()
     {
@@ -18,7 +21,14 @@ public class Health_Module : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*if (DamageFrame == true)
+        {
+            DamageFrameTimer -= Time.deltaTime;
+            if (DamageFrameTimer <= 0)
+            {
+                DamageFrame = false;
+            }
+        }*/
     }
 
     public void TakeDamage(int Damage)
@@ -26,6 +36,9 @@ public class Health_Module : MonoBehaviour
         // Subtracts Health from this character
         Current_Health -= Damage;
         //Debug.Log("New Health: " + Current_Health);
+        //var myMeshRenderer = this.gameObject.GetComponent<MeshRenderer>();
+        //MyMaterialColor = myMeshRenderer.material.color;
+
         HealthStatus_Update();
     }
 
@@ -80,11 +93,12 @@ public class Health_Module : MonoBehaviour
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
             //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             //SceneManager.LoadScene(currentSceneIndex);
-            if (!playerIsDead){//added an extra check to stop infinite "die" calls
+            if (!playerIsDead)
+            {//added an extra check to stop infinite "die" calls
                 playerIsDead = true;
                 Die();
             }
-            
+
             //==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==TEMP==
         }
         else if (Current_Health <= 0)
@@ -117,6 +131,7 @@ public class Health_Module : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
     }
+
 }

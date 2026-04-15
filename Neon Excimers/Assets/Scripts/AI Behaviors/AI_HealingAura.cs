@@ -31,7 +31,7 @@ public class AI_HealingAura : MonoBehaviour
     {
         if (HealingDebounce == false)
         {
-            Debug.Log("I began healing another enemy!");
+            //Debug.Log("I began healing another enemy!");
             HealingDebounce = true;
             if (other.gameObject.tag == "Enemy")
             {
@@ -40,7 +40,7 @@ public class AI_HealingAura : MonoBehaviour
                 EnemyHealthModule.TakeDamage(-5);
             }
 
-            Debug.Log("I collided with: " + other.gameObject.name);
+            //Debug.Log("I collided with: " + other.gameObject.name);
         }
     }
 
@@ -57,7 +57,7 @@ public class AI_HealingAura : MonoBehaviour
                 EnemyHealthModule.TakeDamage(-5);
             }
 
-            Debug.Log("I collided with: " + other.gameObject.name);
+            //Debug.Log("I collided with: " + other.gameObject.name);
         }
     }
 }

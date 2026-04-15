@@ -12,11 +12,20 @@ public class AI_GameManager : MonoBehaviour
     public float Debug_InfiniteSpawn_Timer = 10f;
     public GameObject Clanker;
 
-    private int Current_Number_Of_Enemies = 0;
+    public GameObject Medic;
 
-    public int Spawn_X_Radius_rand = 40;
-    public int Spawn_Z_Radius_rand = 40;
+    public GameObject Bulldozer;
+
+    public int Current_Number_Of_Enemies = 0;
+
+    public int Spawn_X_Radius_rand = 120;
+    public int Spawn_Z_Radius_rand = 120;
     public List<UnityEngine.GameObject> List_Of_Enemies = new List<UnityEngine.GameObject>();
+    public List<UnityEngine.GameObject> List_Of_SpawnPoints = new List<UnityEngine.GameObject>();
+
+    // 1 in this chance for a medic to spawn
+    public int ChanceForMedic = 10;
+    public int ChanceForBulldozer = 30;
     void Start()
     {
 
@@ -25,12 +34,12 @@ public class AI_GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug_InfiniteSpawn_Timer -= Time.deltaTime;
+        /*Debug_InfiniteSpawn_Timer -= Time.deltaTime;
         if (Debug_InfiniteSpawn_Timer <= 0)
         {
             Debug_InfiniteSpawn_Timer = Debug_InfiniteSpawn_Timer_Default;
             Spawn_Enemy();
-        }
+        }*/
     }
     void Spawn_Until_Max()
     {
@@ -52,10 +61,25 @@ public class AI_GameManager : MonoBehaviour
         // Spawns an enemy at a random available spawn point
         // !! NOTE !! For now this script just finds the player's location 
         // and spawns them in a radius around them. 
+        var WhatAmI = UnityEngine.Random.Range(1, ChanceForBulldozer + 1);
         var x_Offset = UnityEngine.Random.Range(-Spawn_X_Radius_rand, Spawn_X_Radius_rand);
         var z_Offset = UnityEngine.Random.Range(-Spawn_Z_Radius_rand, Spawn_Z_Radius_rand);
-        var ChosenSpawnPosition = GameObject.Find("Player").transform.position;
-        Instantiate(Clanker, new Vector3((ChosenSpawnPosition.x + x_Offset), 12f, (ChosenSpawnPosition.z + z_Offset)), Quaternion.identity);
+        /*var ChosenSpawnPosition = GameObject.Find("Player").transform.position;
+        Instantiate(Clanker, new Vector3(ChosenSpawnPosition.x + x_Offset, 12f, ChosenSpawnPosition.z + z_Offset), Quaternion.identity);*/
+        var NumberIn_SpawnPointList = UnityEngine.Random.Range(0, List_Of_SpawnPoints.Count);
+        var SpawnPointToSelect = List_Of_SpawnPoints[NumberIn_SpawnPointList].transform.position;
+        if (WhatAmI == ChanceForMedic)
+        {
+            Instantiate(Medic, new Vector3(SpawnPointToSelect.x + x_Offset, 12f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+        }
+        else if (WhatAmI == ChanceForBulldozer)
+        {
+            Instantiate(Bulldozer, new Vector3(SpawnPointToSelect.x + x_Offset, 30f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(Clanker, new Vector3(SpawnPointToSelect.x + x_Offset, 12f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+        }
     }
 
     public void Add_Enemy_To_List(GameObject EnemyInQuestion)
@@ -63,6 +87,8 @@ public class AI_GameManager : MonoBehaviour
         // Fairly straightforward - Just adds them into the list
         Current_Number_Of_Enemies += 1;
         List_Of_Enemies.Add(EnemyInQuestion);
+        var Wave_Manager_Script = this.gameObject.GetComponentInChildren<WaveManager_Script>();
+        Wave_Manager_Script.Current_Number_Of_Enemies = Current_Number_Of_Enemies;
     }
 
     public void Remove_Enemy_From_List(GameObject EnemyInQuestion)
@@ -70,6 +96,10 @@ public class AI_GameManager : MonoBehaviour
         // Fairly straightforward - Just removes them from the list (because they're dead)
         Current_Number_Of_Enemies -= 1;
         List_Of_Enemies.Remove(EnemyInQuestion);
+
+        var Wave_Manager_Script = this.gameObject.GetComponentInChildren<WaveManager_Script>();
+        Wave_Manager_Script.Current_Number_Of_Enemies = Current_Number_Of_Enemies;
+
     }
 
     public List<UnityEngine.GameObject> GiveMeEnemyList()
@@ -83,5 +113,11 @@ public class AI_GameManager : MonoBehaviour
 
         // This should be the last thing that you do.
         List_Of_Enemies.Clear();
+    }
+
+    public void Add_SpawnPoint_To_List(GameObject SpawnPointInQuestion)
+    {
+        // Fairly straightforward - Just adds them into the list
+        List_Of_SpawnPoints.Add(SpawnPointInQuestion);
     }
 }

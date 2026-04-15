@@ -147,11 +147,11 @@ public class AI_Controller : MonoBehaviour
             {
                 //Debug.Log("Had to look for literally any enemy at all.");
                 var TargetsHealthModule = ThisEnemy.gameObject.GetComponent<Health_Module>();
-                if (TargetsHealthModule.HasThisCharacterTakenDamage())
-                {
-                    //Debug.Log("I found a random damaged enemy!");
-                    return ThisEnemy;
-                }
+                //if (TargetsHealthModule.HasThisCharacterTakenDamage())
+                //{
+                //Debug.Log("I found a random damaged enemy!");
+                return ThisEnemy;
+                //}
             }
         }
 

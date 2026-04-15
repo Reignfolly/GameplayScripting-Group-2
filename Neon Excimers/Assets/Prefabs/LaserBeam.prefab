@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6903801093738842158}
   - component: {fileID: 3260993805264851708}
   - component: {fileID: 7446808460922692367}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LaserBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 68
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
