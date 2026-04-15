@@ -20,9 +20,7 @@ public class WeaponStats : ScriptableObject
 
     void OnEnable()
     {   
-        rangeModifier = 0f;
-        damageModifier = 0f;
-        areaModifier = 0f;
+
         UpgradeRefresh();
     }
 

@@ -2,7 +2,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerStats", menuName = "Scriptable Objects/PlayerStats")]
 public class PlayerStats : ScriptableObject
-{
+{   
+    public int KillCount = 0;
+
     [Header("Base Stats")]
     public float baseMoveSpeed = 6f;        // How fast the player moves normally
     public float baseAcceleration = 20f;    // How quickly player reaches target speed (smoothness)
@@ -26,11 +28,7 @@ public class PlayerStats : ScriptableObject
 
     void OnEnable()
     {   
-        moveSpeedModifier = 0f;
-        accelerationModifier = 0f;
-        dashSpeedModifier = 0f;
-        dashDurationModifier = 0f;
-        dashCooldownModifier = 0f;
+
         UpgradeRefresh();
     }
 

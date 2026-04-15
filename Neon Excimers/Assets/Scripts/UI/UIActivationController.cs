@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class UIActivationController : MonoBehaviour
-{
+{   
+    public PlayerStats PlayerStats;
     public GameObject UpgradeMenu;
     public GameObject PauseMenu;
     public GameObject StatMenu;
@@ -12,6 +13,9 @@ public class UIActivationController : MonoBehaviour
 
 
     private bool isPaused = false;
+
+    public int upgradeThreshold = 10;
+    public int ThresholdIncrement = 0;
 
     void Update()
     {
@@ -28,6 +32,15 @@ public class UIActivationController : MonoBehaviour
         {
             StatMenu.SetActive(false);
         }
+
+        if (PlayerStats.KillCount >= upgradeThreshold && UpgradeMenu.activeSelf == false && DeathScreen.activeSelf == false && StartScreen.activeSelf == false)
+        {
+            ActivateUpgradeMenu();
+            ThresholdIncrement += 2;
+            upgradeThreshold += 10 + ThresholdIncrement;
+        }
+
+
     }
 
     public void ActivateUpgradeMenu()

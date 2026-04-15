@@ -26,6 +26,8 @@ public class AI_GameManager : MonoBehaviour
     // 1 in this chance for a medic to spawn
     public int ChanceForMedic = 10;
     public int ChanceForBulldozer = 30;
+
+    public PlayerStats PlayerStats;
     void Start()
     {
 
@@ -99,6 +101,8 @@ public class AI_GameManager : MonoBehaviour
 
         var Wave_Manager_Script = this.gameObject.GetComponentInChildren<WaveManager_Script>();
         Wave_Manager_Script.Current_Number_Of_Enemies = Current_Number_Of_Enemies;
+
+        PlayerStats.KillCount += 1;
 
     }
 
