@@ -5,7 +5,7 @@ public class LaserShooter : MonoBehaviour
     
     [Header("References")]
 
-    public WeaponStats weaponStats; // Reference to weapon stats ScriptableObject
+    public WeaponStats WeaponStats; // Reference to weapon stats ScriptableObject
     public Transform firePoint;
     public Camera cam;
     public GameObject laserPrefab;
@@ -14,17 +14,17 @@ public class LaserShooter : MonoBehaviour
     public float range = 25f;
     public float damage = 50f;
     public float duration = 0.1f;
-    public float width = 0.2f;
+    public float width = 0.8f;
 
     [Header("Debug")]
     public bool showDebug = false;
 
     void PhysicsUpdate()
     {   
-        if (weaponStats != null) {//update weapon stats from weapon stats scriptable object
-            range = weaponStats.range;      
-            damage = weaponStats.damage; 
-            width = weaponStats.area;       
+        if (WeaponStats != null) {//update weapon stats from weapon stats scriptable object
+            range = WeaponStats.range;      
+            damage = WeaponStats.damage; 
+            width = WeaponStats.area;       
         }
     }
     void Update()
