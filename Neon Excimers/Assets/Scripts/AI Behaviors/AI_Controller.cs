@@ -64,6 +64,10 @@ public class AI_Controller : MonoBehaviour
                 // Standard enemy type
                 Begin_Standard_Behavior_Package();
                 break;
+            case Enemy_Types.Ranger:
+                // Ranger enemy type
+                Begin_Ranger_Behavior_Package();
+                break;
             case Enemy_Types.Shark:
                 // Shark enemy type
                 Begin_Shark_Behavior_Package();
@@ -169,6 +173,14 @@ public class AI_Controller : MonoBehaviour
         }
     }
 
+    private void doStrafeAndShoot(NavMeshAgent AI_Navigation_agent, GameObject PlayerAsTarget)
+    {
+        if (PlayerAsTarget != null)
+        {
+            AI_Navigation_agent.destination = PlayerAsTarget.transform.position;
+        }
+    }
+
     private void doAlly_Chase(NavMeshAgent AI_Navigation_agent, GameObject FriendlyTarget)
     {
         AI_Navigation_agent.destination = FriendlyTarget.transform.position;
@@ -203,6 +215,25 @@ public class AI_Controller : MonoBehaviour
         // AI: Find player position. Go to player position.
 
         doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
+
+    }
+
+    void Begin_Ranger_Behavior_Package()
+    {
+        // I am the Ranger Enemy Type
+        // Pew Pew Pew
+        // AI: Find player position. Go within a certain distance of the player, open fire
+
+        float distanceToPlayer = Vector3.Distance(this.gameObject.transform.position, PlayerAsTarget.transform.position);
+        if (distanceToPlayer >= 30)
+        {
+            doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
+        }
+        else
+        {
+            // Strafe and shoot the player
+            //doStrafeAndShoot(AI_Navigation_agent, PlayerAsTarget);
+        }
 
     }
     void Begin_Shark_Behavior_Package()

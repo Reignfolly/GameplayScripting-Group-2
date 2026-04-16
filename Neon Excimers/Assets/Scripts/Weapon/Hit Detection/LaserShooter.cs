@@ -1,8 +1,8 @@
 using UnityEngine;
 
 public class LaserShooter : MonoBehaviour
-{   
-    
+{
+
     [Header("References")]
 
     public WeaponStats WeaponStats; // Reference to weapon stats ScriptableObject
@@ -15,24 +15,33 @@ public class LaserShooter : MonoBehaviour
     public float damage = 50f;
     public float duration = 0.1f;
     public float width = 0.8f;
+    public float fireRate = 0.08f;
+    private float fireDelay = 0f;
 
     [Header("Debug")]
     public bool showDebug = false;
 
     void PhysicsUpdate()
-    {   
-        if (WeaponStats != null) {//update weapon stats from weapon stats scriptable object
-            range = WeaponStats.range;      
-            damage = WeaponStats.damage; 
-            width = WeaponStats.area;       
+    {
+        if (WeaponStats != null)
+        {//update weapon stats from weapon stats scriptable object
+            range = WeaponStats.range;
+            damage = WeaponStats.damage;
+            width = WeaponStats.area;
         }
     }
     void Update()
-    {   
+    {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && fireDelay >= fireRate)
         {
+            // Fires every fireRate
             FireLaser();
+            fireDelay = 0;
+        }
+        else
+        {
+            fireDelay += Time.deltaTime;
         }
     }
 

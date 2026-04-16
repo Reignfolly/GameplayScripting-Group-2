@@ -1,5 +1,5 @@
 using UnityEngine;
-public enum Enemy_Types { Standard, Shark, Bulldozer, Medic, Officer };
+public enum Enemy_Types { Standard, Shark, Bulldozer, Medic, Officer, Ranger };
 public enum Difficulty_Levels { Company, Battalion, Brigade, Division, Army };
 public class Enum_Declaration_script : MonoBehaviour
 {
