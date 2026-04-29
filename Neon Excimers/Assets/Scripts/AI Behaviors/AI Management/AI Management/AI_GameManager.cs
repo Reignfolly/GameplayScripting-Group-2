@@ -15,6 +15,8 @@ public class AI_GameManager : MonoBehaviour
     public GameObject Medic;
 
     public GameObject Bulldozer;
+    public GameObject Ranger;
+    public GameObject Shark;
 
     public int Current_Number_Of_Enemies = 0;
 
@@ -26,6 +28,9 @@ public class AI_GameManager : MonoBehaviour
     // 1 in this chance for a medic to spawn
     public int ChanceForMedic = 10;
     public int ChanceForBulldozer = 30;
+    public int ChanceForRanger = 5;
+
+    public int ChanceForShark = 4;
 
     public PlayerStats PlayerStats;
     void Start()
@@ -72,15 +77,23 @@ public class AI_GameManager : MonoBehaviour
         var SpawnPointToSelect = List_Of_SpawnPoints[NumberIn_SpawnPointList].transform.position;
         if (WhatAmI == ChanceForMedic)
         {
-            Instantiate(Medic, new Vector3(SpawnPointToSelect.x + x_Offset, 12f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+            Instantiate(Medic, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
         }
         else if (WhatAmI == ChanceForBulldozer)
         {
-            Instantiate(Bulldozer, new Vector3(SpawnPointToSelect.x + x_Offset, 30f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+            Instantiate(Bulldozer, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+        }
+        else if (WhatAmI == ChanceForRanger)
+        {
+            Instantiate(Ranger, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+        }
+        else if (WhatAmI <= ChanceForShark && WhatAmI > 1)
+        {
+            Instantiate(Shark, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
         }
         else
         {
-            Instantiate(Clanker, new Vector3(SpawnPointToSelect.x + x_Offset, 12f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+            Instantiate(Clanker, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
         }
     }
 

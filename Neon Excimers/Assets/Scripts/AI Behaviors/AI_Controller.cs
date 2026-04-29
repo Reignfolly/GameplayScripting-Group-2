@@ -31,6 +31,17 @@ public class AI_Controller : MonoBehaviour
     [SerializeField] private GameObject FriendlyTarget = null;
 
 
+    // These are for the "Shark" enemy type
+
+    private int SharkRushPositionOffset = 40;
+    private bool CompletedRush = false;
+    private bool SelectedRushPosition = false;
+    private Vector3 ChosenRushPositionOffset;
+    private Vector3 SnapshotOfPlayerPosition;
+
+    private float SharkRushSpeedMult = 3f;
+
+
     // This variable determines AI behavior. All AI behavior types are stored in this script.
     [SerializeField] Enemy_Types MyEnemy_AI_Type;
     void Start()
@@ -101,8 +112,33 @@ public class AI_Controller : MonoBehaviour
 
 
     // (BEGIN) Search For Target Scripts (BEGIN)
-
-
+    private void SelectAPlayerRushPosition(NavMeshAgent AI_Navigation_agent, GameObject PlayerAsTarget)
+    {
+        if (SelectedRushPosition == false)
+        {
+            var NewRushPosition = UnityEngine.Random.Range(1, 4);
+            switch (NewRushPosition)
+            {
+                // Think of this as a clock. 1 is 12, 4 is 9.
+                // Okay that might not be helpful.
+                // Think of it like a compass. 1 is North, 4 is West
+                // Does that make sense?
+                case 1:
+                    ChosenRushPositionOffset = new Vector3(0, 0, SharkRushPositionOffset);
+                    break;
+                case 2:
+                    ChosenRushPositionOffset = new Vector3(SharkRushPositionOffset, 0, 0);
+                    break;
+                case 3:
+                    ChosenRushPositionOffset = new Vector3(0, 0, -SharkRushPositionOffset);
+                    break;
+                case 4:
+                    ChosenRushPositionOffset = new Vector3(-SharkRushPositionOffset, 0, 0);
+                    break;
+            }
+            SelectedRushPosition = true;
+        }
+    }
 
 
     // [END] Search For Target Scripts [END]
@@ -173,12 +209,10 @@ public class AI_Controller : MonoBehaviour
         }
     }
 
-    private void doStrafeAndShoot(NavMeshAgent AI_Navigation_agent, GameObject PlayerAsTarget)
+    private void ShootRangedWeapon(NavMeshAgent AI_Navigation_agent, GameObject PlayerAsTarget)
     {
-        if (PlayerAsTarget != null)
-        {
-            AI_Navigation_agent.destination = PlayerAsTarget.transform.position;
-        }
+        var MyRangedAttackScript = this.gameObject.GetComponentInChildren<AI_RangedAttack>();
+        MyRangedAttackScript.DoRangedAttackASAP();
     }
 
     private void doAlly_Chase(NavMeshAgent AI_Navigation_agent, GameObject FriendlyTarget)
@@ -187,9 +221,20 @@ public class AI_Controller : MonoBehaviour
     }
 
 
-    private void do_circle_around_player()
+    private void do_circle_around_player(NavMeshAgent AI_Navigation_agent, GameObject PlayerAsTarget)
     {
-
+        float dist = AI_Navigation_agent.remainingDistance;
+        if (dist >= 5)
+        {
+            AI_Navigation_agent.destination = PlayerAsTarget.transform.position + ChosenRushPositionOffset;
+        }
+        else
+        {
+            CompletedRush = true;
+            AI_Navigation_agent.speed *= SharkRushSpeedMult;
+            AI_Navigation_agent.acceleration *= 3;
+            doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
+        }
     }
     private void move_Between_Goalposts(NavMeshAgent AI_Navigation_agent, int current_Goalpost_Index, GameObject PlayerAsTarget)
     {
@@ -225,14 +270,17 @@ public class AI_Controller : MonoBehaviour
         // AI: Find player position. Go within a certain distance of the player, open fire
 
         float distanceToPlayer = Vector3.Distance(this.gameObject.transform.position, PlayerAsTarget.transform.position);
-        if (distanceToPlayer >= 30)
+        NavMeshAgent AI_Navigation_agent = GetComponent<NavMeshAgent>();
+
+        if (distanceToPlayer >= 50)
         {
             doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
         }
         else
         {
-            // Strafe and shoot the player
-            //doStrafeAndShoot(AI_Navigation_agent, PlayerAsTarget);
+            doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
+            ShootRangedWeapon(AI_Navigation_agent, PlayerAsTarget);
+            doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
         }
 
     }
@@ -243,7 +291,22 @@ public class AI_Controller : MonoBehaviour
 
         // AI: move to the player, then move around them for a bit, then charge at them.
         // Alternatively, move to the player, then immediately charge
-        do_circle_around_player();
+
+        if (CompletedRush == false)
+        {
+            if (SelectedRushPosition == true)
+            {
+                do_circle_around_player(AI_Navigation_agent, PlayerAsTarget);
+            }
+            else
+            {
+                SelectAPlayerRushPosition(AI_Navigation_agent, PlayerAsTarget);
+            }
+        }
+        else
+        {
+            doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
+        }
 
     }
     void Begin_Bulldozer_Behavior_Package()

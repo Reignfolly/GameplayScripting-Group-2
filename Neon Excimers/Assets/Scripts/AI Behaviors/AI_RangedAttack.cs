@@ -8,7 +8,10 @@ public class AI_RangedAttack : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletSpeed = 30f;
-    public float lifeTime = 20f;
+    public float lifeTime = 8f;
+
+    public float fireRate = 2f;
+    public float timeTillFire = 2f;
     void Start()
     {
 
@@ -17,7 +20,20 @@ public class AI_RangedAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timeTillFire > 0)
+        {
+            timeTillFire -= Time.deltaTime;
+        }
+    }
 
+    public void DoRangedAttackASAP()
+    {
+        if (timeTillFire <= 0)
+        {
+            Debug.Log("Firing my Ranged Weapon!");
+            fire();
+            timeTillFire = fireRate;
+        }
     }
 
     private void fire()
