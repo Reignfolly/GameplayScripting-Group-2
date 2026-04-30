@@ -30,7 +30,7 @@ public class AI_RangedAttack : MonoBehaviour
     {
         if (timeTillFire <= 0)
         {
-            Debug.Log("Firing my Ranged Weapon!");
+            // Debug.Log("Firing my Ranged Weapon!");
             fire();
             timeTillFire = fireRate;
         }

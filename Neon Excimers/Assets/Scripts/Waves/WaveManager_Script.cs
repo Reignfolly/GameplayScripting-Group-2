@@ -9,6 +9,15 @@ public class WaveManager_Script : MonoBehaviour
     const float Starting_Run_Update_Script_Interval = 5;
     [SerializeField] float Run_Update_Script_Interval = Starting_Run_Update_Script_Interval;
     [SerializeField] int currentWave = 0;
+
+    // Enemy Formation Variables
+    // Formations represent the total number of enemies that the player will
+    // Face should they survive long enough
+    const int Default_Formation_Size = 1000; // Battalions are about 1,000 strong
+    public int Current_Formation_Size = Default_Formation_Size;
+
+
+    // End Formation Variables
     const int Starting_EnemyReserve = 40;
     public int Current_EnemyReserve = Starting_EnemyReserve;
 
@@ -25,8 +34,7 @@ public class WaveManager_Script : MonoBehaviour
     private bool Currently_SpawningEnemies = false;
 
 
-
-
+    [SerializeField] Difficulty_Levels CurrentDifficultyLevel;
 
     void Start()
     {
@@ -63,18 +71,66 @@ public class WaveManager_Script : MonoBehaviour
         }
     }
 
+    public void SetNewDifficulty(Difficulty_Levels NewDifficultyLevel)
+    {
+        switch (NewDifficultyLevel)
+        {
+            case Difficulty_Levels.Battalion: // Easy && Quicker
+                Current_Formation_Size = 1000;
+                break;
+            case Difficulty_Levels.Regiment: // Easier
+                Current_Formation_Size = 3000;
+                break;
+            case Difficulty_Levels.Brigade: // Fairest
+                Current_Formation_Size = 7500;
+                break;
+            case Difficulty_Levels.Division: // Difficult
+                Current_Formation_Size = 15000;
+                break;
+            case Difficulty_Levels.Army: // Most difficult && Longest
+                Current_Formation_Size = 100000;
+                break;
+        }
+    }
+
     public void Start_New_Wave()
     {
         currentWave += 1;
-        Current_EnemyReserve = Starting_EnemyReserve * currentWave;
-        Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
+        switch (CurrentDifficultyLevel)
+        {
+            case Difficulty_Levels.Battalion: // Easy && Quicker
+                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) / 3; // Faster Waves
+                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
+                break;
+            case Difficulty_Levels.Regiment: // Easier
+                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) / 2;
+                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
+                break;
+            case Difficulty_Levels.Brigade: // Fairest
+                Current_EnemyReserve = Starting_EnemyReserve * currentWave;
+                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
+                break;
+            case Difficulty_Levels.Division: // Difficult
+                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) * 2;
+                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
+                break;
+            case Difficulty_Levels.Army: // Most difficult && Longest
+                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) * 3; // Much Longer Waves
+                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
+                break;
+        }
         if (Current_MaxNumOfEnemiesAliveAtOnce > 80)
         {
             // Test limit: don't spawn more than 80 at once to prevent lag.
             Current_MaxNumOfEnemiesAliveAtOnce = 80;
         }
+
+        // The enemies that were just in reserve are being deployed to fight the player
+
+        Current_Formation_Size -= Current_EnemyReserve;
         Debug.Log("NEW WAVE: " + currentWave);
         Debug.Log("MAX NUMBER OF ALIVE ENEMIES: " + Current_MaxNumOfEnemiesAliveAtOnce);
+        Debug.Log("REMAINING ENEMIES IN FORMATION " + Current_Formation_Size);
         SpawnWaveEnemies();
     }
 
@@ -129,7 +185,7 @@ public class WaveManager_Script : MonoBehaviour
         var AI_Manager_Script = this.gameObject.GetComponentInChildren<AI_GameManager>();
         Current_EnemyReserve -= 1;
         // Debug.Log(Current_EnemyReserve);
-        Debug.Log("Spawning a new enemy for the wave!");
+        // Debug.Log("Spawning a new enemy for the wave!");
         AI_Manager_Script.Spawn_Enemy();
     }
 
