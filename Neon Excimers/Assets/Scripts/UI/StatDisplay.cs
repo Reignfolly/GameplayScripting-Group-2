@@ -11,11 +11,11 @@ public class StatDisplay : MonoBehaviour
     {   
         if (StatText != null)
         {   
-
-            StatText.text = "Attack Dmg: " + WeaponStats.damage.ToString() + " (" + WeaponStats.baseDamage + " + " + WeaponStats.damageModifier.ToString() + "%)\n"+
-            "Attack Range: " + WeaponStats.range.ToString() + " (" + WeaponStats.baseRange + " + " + WeaponStats.rangeModifier.ToString() + "%)\n"+
-            "Move Speed: " + PlayerStats.moveSpeed.ToString() + " (" + PlayerStats.baseMoveSpeed + " + " + PlayerStats.moveSpeedModifier.ToString() + "%)\n"+
-            "Dash Cdn: " + PlayerStats.dashCooldown.ToString() + " (" + PlayerStats.baseDashCooldown + " - " + PlayerStats.dashCooldownModifier.ToString() + "%)";
+           StatText.text = 
+    $"Attack Dmg: {WeaponStats.damage} ({WeaponStats.baseDamage} + {WeaponStats.damageModifier}%)\n" +
+    $"Attack Range: {WeaponStats.range} ({WeaponStats.baseRange} + {WeaponStats.rangeModifier}%)\n" +
+    $"Move Speed: {PlayerStats.moveSpeed} ({PlayerStats.baseMoveSpeed} + {PlayerStats.moveSpeedModifier}%)\n" +
+    $"Dash Cdn: {PlayerStats.dashCooldown} ({PlayerStats.baseDashCooldown} - {PlayerStats.dashCooldownModifier}%)";
              
 
         }
