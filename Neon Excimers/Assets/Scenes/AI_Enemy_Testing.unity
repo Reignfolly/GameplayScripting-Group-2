@@ -1356,6 +1356,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8202cef8977b144b7c1e6dea2c85b8, type: 3}
+--- !u!1 &1149892770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5216297950802292273, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+  m_PrefabInstance: {fileID: 279151963204095387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1306186673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,12 +1966,26 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8470634640719620237, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
   m_PrefabInstance: {fileID: 279151963204095387}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1149892770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78abd44a98df1d34a9453b667b606c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1675411232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149892770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d177c552c954143b421fdb8e2015ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerStats: {fileID: 0}
+  PlayerHealthModule: {fileID: 1675411231}
 --- !u!1 &1693502863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5903160911593929168, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
@@ -2760,7 +2779,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5216297950802292273, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1675411232}
   m_SourcePrefab: {fileID: 100100000, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
 --- !u!1001 &2142854345448819253
 PrefabInstance:
@@ -3214,6 +3236,34 @@ PrefabInstance:
       propertyPath: PlayerStats
       value: 
       objectReference: {fileID: 11400000, guid: 85eaa0af91183f542adde4cb753e4cab, type: 2}
+    - target: {fileID: 5344442413011548168, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
+      propertyPath: PlayerKilledEnemyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344442413011548168, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
+      propertyPath: PlayerKilledEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344442413011548168, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
+      propertyPath: PlayerKilledEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1675411232}
+    - target: {fileID: 5344442413011548168, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
+      propertyPath: PlayerKilledEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344442413011548168, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
+      propertyPath: PlayerKilledEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GiveMeHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344442413011548168, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
+      propertyPath: PlayerKilledEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LifeStealScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5344442413011548168, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
+      propertyPath: PlayerKilledEnemyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8355602870284372587, guid: 83a9bea22fd18264a8da586b0446b8b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
