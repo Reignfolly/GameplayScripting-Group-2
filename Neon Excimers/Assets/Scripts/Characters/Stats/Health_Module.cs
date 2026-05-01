@@ -11,8 +11,6 @@ public class Health_Module : MonoBehaviour
     private bool playerIsDead = false; //added this to stop infinite "die" calls when player health is 0 or less
     private bool DamageFrame = false;
     //private float DamageFrameTimer = 0.15;
-
-
     void Start()
     {
 

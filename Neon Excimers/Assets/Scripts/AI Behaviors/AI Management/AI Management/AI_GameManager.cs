@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class AI_GameManager : MonoBehaviour
 {
@@ -33,9 +34,13 @@ public class AI_GameManager : MonoBehaviour
     public int ChanceForShark = 4;
 
     public PlayerStats PlayerStats;
+    public UnityEvent PlayerKilledEnemyEvent = new UnityEvent();
     void Start()
     {
-
+        if (PlayerKilledEnemyEvent == null)
+        {
+            PlayerKilledEnemyEvent = new UnityEvent();
+        }
     }
 
     // Update is called once per frame
@@ -116,7 +121,7 @@ public class AI_GameManager : MonoBehaviour
         Wave_Manager_Script.Current_Number_Of_Enemies = Current_Number_Of_Enemies;
 
         PlayerStats.KillCount += 1;
-
+        PlayerKilledEnemyEvent.Invoke();
     }
 
     public List<UnityEngine.GameObject> GiveMeEnemyList()
