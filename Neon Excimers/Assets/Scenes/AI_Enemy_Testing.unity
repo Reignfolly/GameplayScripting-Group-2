@@ -1815,6 +1815,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2062851676}
+        m_TargetAssemblyTypeName: UpgradeButtons, Assembly-CSharp
+        m_MethodName: RefreshStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1483990515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,6 +1998,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerStats: {fileID: 0}
   PlayerHealthModule: {fileID: 1675411231}
+--- !u!114 &1675411234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+  m_PrefabInstance: {fileID: 279151963204095387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149892770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc5f11d0c489e242bbd2d7efca0e9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1693502863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5903160911593929168, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
@@ -2713,6 +2736,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 733060944}
     - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: WeaponStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 706983253e054784db91de8d4ea0a34e, type: 2}
+    - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
       propertyPath: FarLaserPrefab
       value: 
       objectReference: {fileID: 5410290667742150864, guid: 150f1e685d2306d45a68306adc9d85e4, type: 3}
@@ -2983,6 +3010,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2062851676}
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Upgrade_Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: RefreshStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UpgradeButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172670208658241284, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181375479316423873, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_Name
+      value: MoveSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339029663667370224, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: laserShooter
+      value: 
+      objectReference: {fileID: 1675411234}
     - target: {fileID: 1437369143578698563, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
       propertyPath: DeathScreen
       value: 
@@ -2998,6 +3065,10 @@ PrefabInstance:
     - target: {fileID: 1675265215903288708, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Increase Weapon Range by 15%
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838823475025607191, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_Name
+      value: Damage
       objectReference: {fileID: 0}
     - target: {fileID: 2877314092973272518, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
       propertyPath: m_IsActive
@@ -3126,6 +3197,10 @@ PrefabInstance:
     - target: {fileID: 6851214405171849143, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070819259644659028, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_Name
+      value: AttackSpeed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -18,7 +18,7 @@ public class LaserShooter : MonoBehaviour
     public float duration = 0.1f;
     public float width = 0.8f;
     public float fireRate = 0.08f;
-    private float fireDelay = 0f;
+
 
     [Header("Debug")]
     public bool showDebug = false;
@@ -26,29 +26,34 @@ public class LaserShooter : MonoBehaviour
     public GameObject HitSoundPrefab;
     public GameObject LaserFireSoundPrefab;
 
-    void PhysicsUpdate()
+    private float fireDelay = 0f;
+
+    void Awake()
     {
-        if (WeaponStats != null)
-        {//update weapon stats from weapon stats scriptable object
-            range = WeaponStats.range;
-            damage = WeaponStats.damage;
-            width = WeaponStats.area;
-        }
+        UpdateGunStats();
     }
     void Update()
     {
-
+        fireDelay += Time.deltaTime; //fixed fire rate by making it always count
         if (Input.GetMouseButton(0) && fireDelay >= fireRate)
         {
             // Fires every fireRate
             FireLaser();
             fireDelay = 0;
         }
-        else
-        {
-            fireDelay += Time.deltaTime;
-        }
+        
     }
+    public void UpdateGunStats() 
+{
+    if (WeaponStats == null) return;
+    //called whenever an upgrade button is pressed
+    // The gun now uses its own local copy of the float.
+    range = WeaponStats.range;
+    damage = WeaponStats.damage;
+    width = WeaponStats.area;
+    fireRate = WeaponStats.attackSpeed; 
+    
+}
 
     void FireLaser()
     {

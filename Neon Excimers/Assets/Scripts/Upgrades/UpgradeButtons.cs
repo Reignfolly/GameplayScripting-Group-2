@@ -5,6 +5,8 @@ public class UpgradeButtons : MonoBehaviour
     public PlayerStats playerStats;
     public WeaponStats weaponStats;
 
+    public LaserShooter laserShooter;
+
      void Start()
     {
         if (playerStats == null)
@@ -13,32 +15,41 @@ public class UpgradeButtons : MonoBehaviour
         }
     }
 
+        public void RefreshStats()
+    {
+
+            playerStats.UpgradeRefresh();
+            weaponStats.UpgradeRefresh();
+            laserShooter.UpdateGunStats();
+
+    }
+
     //===================Player stat upgrade functions========
-    public void UpgradeMoveSpeed()
+        public void Upgrade_Damage()
+    {
+        weaponStats.damageModifier += 15f;
+    }
+    public void Upgrade_AttackSpeed()
+    {
+        weaponStats.attackSpeedModifier += 15f;
+    }
+
+    public void Upgrade_MoveSpeed()
     {
        playerStats.moveSpeedModifier += 15f; 
     }
 
-     public void UpgradeDashCooldown()
+
+
+    public void Upgrade_Sharpshooter()
+    {
+        weaponStats.rangeModifier += 30f;
+    }
+
+    public void Upgrade_Windstep()
     {   
-        if (playerStats.dashCooldownModifier >= 80f) {
-            Debug.Log("Dash cooldown cannot be reduced further!");
-            return;
-        } else {
-            playerStats.dashCooldownModifier += 15f;
-        }
-    }
 
-    //===================Weapon stat upgrade functions========
-    public void UpgradeDamage()
-    {
-        weaponStats.damageModifier += 15f;
-    }
+        playerStats.dashCooldownModifier += 20f;
 
-    public void UpgradeRange()
-    {
-        weaponStats.rangeModifier += 15f;
     }
-
-    
 }

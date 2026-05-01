@@ -33,15 +33,15 @@ public class PlayerStats : ScriptableObject
     }
 
 
-        void UpgradeRefresh ()
+    public void UpgradeRefresh ()
     {   
         
         // This function will be called whenever an upgrade is purchased to recalculate the player's stats based on the base values and the upgrades they have.
 
-        moveSpeed = baseMoveSpeed * (1 + moveSpeedModifier/100);
-        acceleration = baseAcceleration * (1 + accelerationModifier/100);
-        dashSpeed = baseDashSpeed * (1 + dashSpeedModifier/100);
-        dashDuration = baseDashDuration * (1 + dashDurationModifier/100);
-        dashCooldown = baseDashCooldown * (1 - dashCooldownModifier/100);
+        moveSpeed = baseMoveSpeed * Mathf.Max(0.1f, 1f + (moveSpeedModifier / 100f));
+        acceleration = baseAcceleration * Mathf.Max(0f, 1f + (accelerationModifier / 100f));
+        dashSpeed    = baseDashSpeed    * Mathf.Max(0f, 1f + (dashSpeedModifier / 100f));
+        dashDuration = baseDashDuration * Mathf.Max(0f, 1f + (dashDurationModifier / 100f));
+        dashCooldown = baseDashCooldown / Mathf.Max(0.01f, 1.0f + (dashCooldownModifier / 100.0f));
     }
 }
