@@ -2694,6 +2694,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 733060944}
     - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: FarLaserPrefab
+      value: 
+      objectReference: {fileID: 5410290667742150864, guid: 150f1e685d2306d45a68306adc9d85e4, type: 3}
+    - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
       propertyPath: HitSoundPrefab
       value: 
       objectReference: {fileID: 367067574792746393, guid: 29d1d968d7176b54ab49f1bb3031a71b, type: 3}
