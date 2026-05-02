@@ -182,8 +182,27 @@ public class WaveManager_Script : MonoBehaviour
 
     void SpawnEnemyWithinWave()
     {
+        // Considers the current wave and the current difficulty level
         var AI_Manager_Script = this.gameObject.GetComponentInChildren<AI_GameManager>();
         Current_EnemyReserve -= 1;
+        switch (CurrentDifficultyLevel)
+        {
+            case Difficulty_Levels.Battalion: // Easy && Quicker
+                Current_Formation_Size = 1000;
+                break;
+            case Difficulty_Levels.Regiment: // Easier
+                Current_Formation_Size = 3000;
+                break;
+            case Difficulty_Levels.Brigade: // Fairest
+                Current_Formation_Size = 7500;
+                break;
+            case Difficulty_Levels.Division: // Difficult
+                Current_Formation_Size = 15000;
+                break;
+            case Difficulty_Levels.Army: // Most difficult && Longest
+                Current_Formation_Size = 100000;
+                break;
+        }
         // Debug.Log(Current_EnemyReserve);
         // Debug.Log("Spawning a new enemy for the wave!");
         AI_Manager_Script.Spawn_Enemy();
@@ -194,4 +213,34 @@ public class WaveManager_Script : MonoBehaviour
         // Whatever needs to happen when the wave ends
         Start_New_Wave();
     }
+
+    /*public void CreateDifficulties()
+    {
+        //BattalionDifficulty_Function();
+        DifficultyLevel RegimentDiff = new DifficultyLevel();
+        DifficultyLevel BrigadeDiff = new DifficultyLevel();
+        DifficultyLevel DivisionDiff = new DifficultyLevel();
+        DifficultyLevel ArmyDiff = new DifficultyLevel();
+    }*/
+
+    /*private void BattalionDifficulty_Function()
+    {
+        DifficultyLevel BattalionDiff = new()
+        {
+            Name = "Battalion", // Name
+            Description = "A relaxed and quick battle.", // Description
+            DifficultyEnum = Battalion, // Enum
+            BaseReserveAmount = 50, // Base Reserve per wave
+            BaseFormationAmount = 1000, // Base Formation per game
+            WaveToSpawnEliteUnits = 5, // Wave to start spawning elite units
+            BaseChanceForEliteUnit = 5, // Base Chance for elite units (when they can spawn)
+            MaxChanceForEliteUnit = 20, // Max Chance for elite units
+            IncreaseChanceForElitePerWave = 1, // Chance increase per wave for elite units
+            WaveToSpawnAdvancedUnits = 12, // Wave to begin spawning advanced units
+            BaseChanceForAdvancedUnit = 1, // Base Chance for advanced units
+            MaxChanceForAdvancedUnit = 8, // Max Chance for advanced units
+            IncreaseChanceForAdvancedPerWave = 1, // Chance increase per wave for advanced units
+            TimeBetweenSpawns = 10 // Time in seconds between each enemy being spawned
+        };
+    }*/
 }
