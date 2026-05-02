@@ -6,13 +6,13 @@ public class WaveClasses : MonoBehaviour
 }
 
 
-/*public struct DifficultyLevel
+public class DifficultyLevel
 {
     public string Name = "Company"; // Name of the Difficulty Level 
 
     public string Description = "A quick test of your skills."; // Description for a menu
 
-    public Difficulty_Levels DifficultyEnum = Company; // Enum associated with this Difficulty Level
+    public Difficulty_Levels DifficultyEnum = Difficulty_Levels.Company; // Enum associated with this Difficulty Level
     public int BaseReserveAmount = 20; // How Many units PER WAVE by default
     public int BaseFormationAmount = 200; // How many units PER GAME by default
 
@@ -27,4 +27,4 @@ public class WaveClasses : MonoBehaviour
     public int IncreaseChanceForAdvancedPerWave = 1; // Increase the chance for Advanced units per wave
 
     public float TimeBetweenSpawns = 5f; // The time the WaveManager will wait between spawns of individual enemies.
-}*/
+}

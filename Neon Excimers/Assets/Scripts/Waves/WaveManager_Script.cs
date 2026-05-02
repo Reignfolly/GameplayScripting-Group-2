@@ -33,12 +33,20 @@ public class WaveManager_Script : MonoBehaviour
     private bool WaitingToSpawnEnemies = false;
     private bool Currently_SpawningEnemies = false;
 
+    public DifficultyLevel BattalionDiff;
+    public DifficultyLevel RegimentDiff;
+    public DifficultyLevel BrigadeDiff;
+    public DifficultyLevel DivisionDiff;
+    public DifficultyLevel ArmyDiff;
+
 
     [SerializeField] Difficulty_Levels CurrentDifficultyLevel;
+    [SerializeField] DifficultyLevel SelectedDifficultyClassInformation; // Easy access to whatever difficulty class we're at right now
 
     void Start()
     {
         // Start_New_Wave();
+        CreateDifficulties();
     }
 
     // Update is called once per frame
@@ -71,24 +79,32 @@ public class WaveManager_Script : MonoBehaviour
         }
     }
 
+    public void Start_New_Game(Difficulty_Levels NewDifficultlyLevel)
+    {
+        currentWave = 0;
+        SetNewDifficulty(NewDifficultlyLevel);
+
+        Start_New_Wave();
+    }
+
     public void SetNewDifficulty(Difficulty_Levels NewDifficultyLevel)
     {
         switch (NewDifficultyLevel)
         {
             case Difficulty_Levels.Battalion: // Easy && Quicker
-                Current_Formation_Size = 1000;
+                SelectedDifficultyClassInformation = BattalionDiff;
                 break;
             case Difficulty_Levels.Regiment: // Easier
-                Current_Formation_Size = 3000;
+                SelectedDifficultyClassInformation = RegimentDiff;
                 break;
             case Difficulty_Levels.Brigade: // Fairest
-                Current_Formation_Size = 7500;
+                SelectedDifficultyClassInformation = BrigadeDiff;
                 break;
             case Difficulty_Levels.Division: // Difficult
-                Current_Formation_Size = 15000;
+                SelectedDifficultyClassInformation = DivisionDiff;
                 break;
             case Difficulty_Levels.Army: // Most difficult && Longest
-                Current_Formation_Size = 100000;
+                SelectedDifficultyClassInformation = ArmyDiff;
                 break;
         }
     }
@@ -214,22 +230,22 @@ public class WaveManager_Script : MonoBehaviour
         Start_New_Wave();
     }
 
-    /*public void CreateDifficulties()
+    public void CreateDifficulties()
     {
-        //BattalionDifficulty_Function();
-        DifficultyLevel RegimentDiff = new DifficultyLevel();
-        DifficultyLevel BrigadeDiff = new DifficultyLevel();
-        DifficultyLevel DivisionDiff = new DifficultyLevel();
-        DifficultyLevel ArmyDiff = new DifficultyLevel();
-    }*/
+        BattalionDifficulty_Function();
+        RegimentDifficulty_Function();
+        BrigadeDifficulty_Function();
+        DivisionDifficulty_Function();
+        ArmyDifficulty_Function();
+    }
 
-    /*private void BattalionDifficulty_Function()
+    private void BattalionDifficulty_Function() // Easiest
     {
         DifficultyLevel BattalionDiff = new()
         {
             Name = "Battalion", // Name
             Description = "A relaxed and quick battle.", // Description
-            DifficultyEnum = Battalion, // Enum
+            DifficultyEnum = Difficulty_Levels.Battalion, // Enum
             BaseReserveAmount = 50, // Base Reserve per wave
             BaseFormationAmount = 1000, // Base Formation per game
             WaveToSpawnEliteUnits = 5, // Wave to start spawning elite units
@@ -242,5 +258,89 @@ public class WaveManager_Script : MonoBehaviour
             IncreaseChanceForAdvancedPerWave = 1, // Chance increase per wave for advanced units
             TimeBetweenSpawns = 10 // Time in seconds between each enemy being spawned
         };
-    }*/
+    }
+
+    private void RegimentDifficulty_Function()
+    {
+        DifficultyLevel RegimentDiff = new()
+        {
+            Name = "Regiment", // Name
+            Description = "A light challenge", // Description
+            DifficultyEnum = Difficulty_Levels.Regiment, // Enum
+            BaseReserveAmount = 75, // Base Reserve per wave
+            BaseFormationAmount = 3000, // Base Formation per game
+            WaveToSpawnEliteUnits = 4, // Wave to start spawning elite units
+            BaseChanceForEliteUnit = 8, // Base Chance for elite units (when they can spawn)
+            MaxChanceForEliteUnit = 20, // Max Chance for elite units
+            IncreaseChanceForElitePerWave = 1, // Chance increase per wave for elite units
+            WaveToSpawnAdvancedUnits = 12, // Wave to begin spawning advanced units
+            BaseChanceForAdvancedUnit = 1, // Base Chance for advanced units
+            MaxChanceForAdvancedUnit = 8, // Max Chance for advanced units
+            IncreaseChanceForAdvancedPerWave = 1, // Chance increase per wave for advanced units
+            TimeBetweenSpawns = 10 // Time in seconds between each enemy being spawned
+        };
+    }
+
+    private void BrigadeDifficulty_Function() // Fairest
+    {
+        DifficultyLevel BrigadeDiff = new()
+        {
+            Name = "Brigade", // Name
+            Description = "A fair fight.", // Description
+            DifficultyEnum = Difficulty_Levels.Brigade, // Enum
+            BaseReserveAmount = 100, // Base Reserve per wave
+            BaseFormationAmount = 5500, // Base Formation per game
+            WaveToSpawnEliteUnits = 4, // Wave to start spawning elite units
+            BaseChanceForEliteUnit = 5, // Base Chance for elite units (when they can spawn)
+            MaxChanceForEliteUnit = 25, // Max Chance for elite units
+            IncreaseChanceForElitePerWave = 1, // Chance increase per wave for elite units
+            WaveToSpawnAdvancedUnits = 12, // Wave to begin spawning advanced units
+            BaseChanceForAdvancedUnit = 1, // Base Chance for advanced units
+            MaxChanceForAdvancedUnit = 10, // Max Chance for advanced units
+            IncreaseChanceForAdvancedPerWave = 1, // Chance increase per wave for advanced units
+            TimeBetweenSpawns = 3 // Time in seconds between each enemy being spawned
+        };
+    }
+
+    private void DivisionDifficulty_Function()
+    {
+        DifficultyLevel DivisionDiff = new()
+        {
+            Name = "Division", // Name
+            Description = "A long and difficult fight.", // Description
+            DifficultyEnum = Difficulty_Levels.Division, // Enum
+            BaseReserveAmount = 300, // Base Reserve per wave
+            BaseFormationAmount = 12000, // Base Formation per game
+            WaveToSpawnEliteUnits = 2, // Wave to start spawning elite units
+            BaseChanceForEliteUnit = 5, // Base Chance for elite units (when they can spawn)
+            MaxChanceForEliteUnit = 30, // Max Chance for elite units
+            IncreaseChanceForElitePerWave = 2, // Chance increase per wave for elite units
+            WaveToSpawnAdvancedUnits = 12, // Wave to begin spawning advanced units
+            BaseChanceForAdvancedUnit = 1, // Base Chance for advanced units
+            MaxChanceForAdvancedUnit = 8, // Max Chance for advanced units
+            IncreaseChanceForAdvancedPerWave = 1, // Chance increase per wave for advanced units
+            TimeBetweenSpawns = 2// Time in seconds between each enemy being spawned
+        };
+    }
+
+    private void ArmyDifficulty_Function() // Hardest
+    {
+        DifficultyLevel ArmyDiff = new()
+        {
+            Name = "Army", // Name
+            Description = "You're going to lose.", // Description
+            DifficultyEnum = Difficulty_Levels.Army, // Enum
+            BaseReserveAmount = 500, // Base Reserve per wave
+            BaseFormationAmount = 100000, // Base Formation per game
+            WaveToSpawnEliteUnits = 1, // Wave to start spawning elite units
+            BaseChanceForEliteUnit = 10, // Base Chance for elite units (when they can spawn)
+            MaxChanceForEliteUnit = 35, // Max Chance for elite units
+            IncreaseChanceForElitePerWave = 1, // Chance increase per wave for elite units
+            WaveToSpawnAdvancedUnits = 3, // Wave to begin spawning advanced units
+            BaseChanceForAdvancedUnit = 5, // Base Chance for advanced units
+            MaxChanceForAdvancedUnit = 20, // Max Chance for advanced units
+            IncreaseChanceForAdvancedPerWave = 1, // Chance increase per wave for advanced units
+            TimeBetweenSpawns = 1 // Time in seconds between each enemy being spawned
+        };
+    }
 }
