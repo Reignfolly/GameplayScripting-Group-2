@@ -33,13 +33,33 @@ public class UpgradeButtons : MonoBehaviour
     {
         weaponStats.attackSpeedModifier += 15f;
     }
-
     public void Upgrade_MoveSpeed()
     {
        playerStats.moveSpeedModifier += 15f; 
     }
 
+    public void Upgrade_Balance()
+    {
+        weaponStats.damageModifier += 5f;
+        weaponStats.attackSpeedModifier += 5f;
+        weaponStats.rangeModifier += 5f;
+        playerStats.moveSpeedModifier += 5f;
+        
+    }
 
+        public void Upgrade_Focus()
+    {
+        weaponStats.damageModifier += 20f;
+        weaponStats.attackSpeedModifier -= 5f;
+        //weaponStats.knockbackModifier -= 5f;
+        weaponStats.rangeModifier += 5f;
+    }
+        public void Upgrade_Disperse()
+    {
+        weaponStats.attackSpeedModifier += 20f;
+        weaponStats.damageModifier -= 5f;
+        weaponStats.rangeModifier += 5f;
+    }
 
     public void Upgrade_Sharpshooter()
     {
