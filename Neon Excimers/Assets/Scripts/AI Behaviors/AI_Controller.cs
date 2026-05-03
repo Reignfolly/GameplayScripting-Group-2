@@ -278,7 +278,6 @@ public class AI_Controller : MonoBehaviour
         }
         else
         {
-            doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
             ShootRangedWeapon(AI_Navigation_agent, PlayerAsTarget);
             doPlayer_Chase(AI_Navigation_agent, PlayerAsTarget);
         }
