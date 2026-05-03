@@ -1,17 +1,19 @@
 using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class WaveClasses : MonoBehaviour
 {
 
 }
 
-
+[System.Serializable]
 public class DifficultyLevel
 {
     public string Name = "Company"; // Name of the Difficulty Level 
 
     public string Description = "A quick test of your skills."; // Description for a menu
-
     public Difficulty_Levels DifficultyEnum = Difficulty_Levels.Company; // Enum associated with this Difficulty Level
     public int BaseReserveAmount = 20; // How Many units PER WAVE by default
     public int BaseFormationAmount = 200; // How many units PER GAME by default

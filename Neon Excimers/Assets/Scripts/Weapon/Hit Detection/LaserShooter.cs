@@ -28,6 +28,8 @@ public class LaserShooter : MonoBehaviour
 
     private float fireDelay = 0f;
 
+    public GameObject hitEffect;
+
     void Awake()
     {
         UpdateGunStats();
@@ -41,19 +43,19 @@ public class LaserShooter : MonoBehaviour
             FireLaser();
             fireDelay = 0;
         }
-        
+
     }
-    public void UpdateGunStats() 
-{
-    if (WeaponStats == null) return;
-    //called whenever an upgrade button is pressed
-    // The gun now uses its own local copy of the float.
-    range = WeaponStats.range;
-    damage = WeaponStats.damage;
-    width = WeaponStats.area;
-    fireRate = WeaponStats.attackSpeed; 
-    
-}
+    public void UpdateGunStats()
+    {
+        if (WeaponStats == null) return;
+        //called whenever an upgrade button is pressed
+        // The gun now uses its own local copy of the float.
+        range = WeaponStats.range;
+        damage = WeaponStats.damage;
+        width = WeaponStats.area;
+        fireRate = WeaponStats.attackSpeed;
+
+    }
 
     void FireLaser()
     {
@@ -85,6 +87,8 @@ public class LaserShooter : MonoBehaviour
         {
             end = hit.point;
 
+            spawnWeaponEffects(hit.point);
+
             if (hit.collider.CompareTag("Enemy"))
             {
                 // Handles the creation of temporary sound object holders
@@ -107,6 +111,7 @@ public class LaserShooter : MonoBehaviour
             if (Physics.Raycast(FarStart, direction, out hit, (range * 2)))
             {
                 FarEnd = hit.point;
+                spawnWeaponEffects(hit.point);
 
                 if (hit.collider.CompareTag("Enemy"))
                 {
@@ -155,5 +160,10 @@ public class LaserShooter : MonoBehaviour
 
         LaserBeam beam = laser.GetComponent<LaserBeam>();
         beam.Initialize(start, end, width, duration);
+    }
+
+    void spawnWeaponEffects(Vector3 HitPoint)
+    {
+        GameObject NewWeaponEffect = Instantiate(hitEffect, HitPoint, Quaternion.identity);
     }
 }

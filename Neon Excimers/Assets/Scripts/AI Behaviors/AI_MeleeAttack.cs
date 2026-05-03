@@ -3,6 +3,7 @@ using UnityEngine;
 public class AI_MeleeAttack : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int Damage = 20;
     void Start()
     {
 
@@ -19,7 +20,7 @@ public class AI_MeleeAttack : MonoBehaviour
         {
             var PlayerHealthModule = collision.gameObject.GetComponent<Health_Module>();
             //Debug.Log("I collided with the player!");
-            PlayerHealthModule.TakeDamage(30);
+            PlayerHealthModule.TakeDamage(Damage);
         }
         ;
         //Debug.Log("I collided with: " + collision.gameObject.name);

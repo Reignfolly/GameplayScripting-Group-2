@@ -1731,11 +1731,105 @@ MonoBehaviour:
   Run_Update_Script_Interval: 5
   currentWave: 0
   Current_Formation_Size: 1000
+  Starting_EnemyReserve: 40
   Current_EnemyReserve: 40
   Current_MaxNumOfEnemiesAliveAtOnce: 12
   Current_WaveSpawnCooldown: 0
   Current_EnemySpawnCooldown: 0
-  CurrentDifficultyLevel: 4
+  BattalionDiff:
+    Name: Company
+    Description: A quick test of your skills.
+    DifficultyEnum: 0
+    BaseReserveAmount: 20
+    BaseFormationAmount: 200
+    WaveToSpawnEliteUnits: 3
+    BaseChanceForEliteUnit: 10
+    MaxChanceForEliteUnit: 35
+    IncreaseChanceForElitePerWave: 1
+    WaveToSpawnAdvancedUnits: 6
+    BaseChanceForAdvancedUnit: 1
+    MaxChanceForAdvancedUnit: 10
+    IncreaseChanceForAdvancedPerWave: 1
+    TimeBetweenSpawns: 5
+  RegimentDiff:
+    Name: Company
+    Description: A quick test of your skills.
+    DifficultyEnum: 0
+    BaseReserveAmount: 20
+    BaseFormationAmount: 200
+    WaveToSpawnEliteUnits: 3
+    BaseChanceForEliteUnit: 10
+    MaxChanceForEliteUnit: 35
+    IncreaseChanceForElitePerWave: 1
+    WaveToSpawnAdvancedUnits: 6
+    BaseChanceForAdvancedUnit: 1
+    MaxChanceForAdvancedUnit: 10
+    IncreaseChanceForAdvancedPerWave: 1
+    TimeBetweenSpawns: 5
+  BrigadeDiff:
+    Name: Company
+    Description: A quick test of your skills.
+    DifficultyEnum: 0
+    BaseReserveAmount: 20
+    BaseFormationAmount: 200
+    WaveToSpawnEliteUnits: 3
+    BaseChanceForEliteUnit: 10
+    MaxChanceForEliteUnit: 35
+    IncreaseChanceForElitePerWave: 1
+    WaveToSpawnAdvancedUnits: 6
+    BaseChanceForAdvancedUnit: 1
+    MaxChanceForAdvancedUnit: 10
+    IncreaseChanceForAdvancedPerWave: 1
+    TimeBetweenSpawns: 5
+  DivisionDiff:
+    Name: Division
+    Description: A long and difficult fight.
+    DifficultyEnum: 4
+    BaseReserveAmount: 80
+    BaseFormationAmount: 15000
+    WaveToSpawnEliteUnits: 2
+    BaseChanceForEliteUnit: 10
+    MaxChanceForEliteUnit: 35
+    IncreaseChanceForElitePerWave: 5
+    WaveToSpawnAdvancedUnits: 5
+    BaseChanceForAdvancedUnit: 1
+    MaxChanceForAdvancedUnit: 10
+    IncreaseChanceForAdvancedPerWave: 3
+    TimeBetweenSpawns: 0.75
+  ArmyDiff:
+    Name: Army
+    Description: You're going to lose.
+    DifficultyEnum: 5
+    BaseReserveAmount: 100
+    BaseFormationAmount: 100000
+    WaveToSpawnEliteUnits: 1
+    BaseChanceForEliteUnit: 5
+    MaxChanceForEliteUnit: 30
+    IncreaseChanceForElitePerWave: 1
+    WaveToSpawnAdvancedUnits: 1
+    BaseChanceForAdvancedUnit: 1
+    MaxChanceForAdvancedUnit: 15
+    IncreaseChanceForAdvancedPerWave: 1
+    TimeBetweenSpawns: 0.4
+  CurrentDifficultyLevel: 5
+  SelectedDifficultyClassInformation:
+    Name: Battalion
+    Description: A relaxed and quick battle.
+    DifficultyEnum: 1
+    BaseReserveAmount: 50
+    BaseFormationAmount: 1000
+    WaveToSpawnEliteUnits: 5
+    BaseChanceForEliteUnit: 5
+    MaxChanceForEliteUnit: 20
+    IncreaseChanceForElitePerWave: 1
+    WaveToSpawnAdvancedUnits: 12
+    BaseChanceForAdvancedUnit: 1
+    MaxChanceForAdvancedUnit: 8
+    IncreaseChanceForAdvancedPerWave: 1
+    TimeBetweenSpawns: 10
+  EliteEnemyList: 
+  AdvancedEnemyList: 
+  GameStarted: 0
 --- !u!1001 &1613755862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2565,6 +2659,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 733060944}
     - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 1288335294657651641, guid: bcededda7de2f4b45b091d24f8a53362, type: 3}
+    - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
       propertyPath: WeaponStats
       value: 
       objectReference: {fileID: 11400000, guid: 706983253e054784db91de8d4ea0a34e, type: 2}
@@ -3055,63 +3153,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1693502867}
   m_SourcePrefab: {fileID: 100100000, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
---- !u!1001 &7051262367329427833
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.5316515
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -239.95305
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710576
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.70710784
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 281899461426131196, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8809651403873428875, guid: 860994f8049198a45883732790ec70c2, type: 3}
-      propertyPath: m_Name
-      value: EnemyPulseBullet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 860994f8049198a45883732790ec70c2, type: 3}
 --- !u!1001 &7937222079919996338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3241,6 +3282,5 @@ SceneRoots:
   - {fileID: 378961344}
   - {fileID: 465683961}
   - {fileID: 1613755862}
-  - {fileID: 7051262367329427833}
   - {fileID: 1009162606}
   - {fileID: 1310744797}
