@@ -68,7 +68,7 @@ public class AI_GameManager : MonoBehaviour
         // or spawns the full amount of given enemies.
     }
 
-    public void Spawn_Enemy()
+    public void Spawn_Enemy(Enemy_Types NewEnemyToSpawn)
     {
         // Spawns an enemy at a random available spawn point
         // !! NOTE !! For now this script just finds the player's location 
@@ -76,29 +76,35 @@ public class AI_GameManager : MonoBehaviour
         var WhatAmI = UnityEngine.Random.Range(1, ChanceForBulldozer + 1);
         var x_Offset = UnityEngine.Random.Range(-Spawn_X_Radius_rand, Spawn_X_Radius_rand);
         var z_Offset = UnityEngine.Random.Range(-Spawn_Z_Radius_rand, Spawn_Z_Radius_rand);
-        /*var ChosenSpawnPosition = GameObject.Find("Player").transform.position;
-        Instantiate(Clanker, new Vector3(ChosenSpawnPosition.x + x_Offset, 12f, ChosenSpawnPosition.z + z_Offset), Quaternion.identity);*/
+
         var NumberIn_SpawnPointList = UnityEngine.Random.Range(0, List_Of_SpawnPoints.Count);
         var SpawnPointToSelect = List_Of_SpawnPoints[NumberIn_SpawnPointList].transform.position;
-        if (WhatAmI == ChanceForMedic)
+
+        switch (NewEnemyToSpawn)
         {
-            Instantiate(Medic, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
-        }
-        else if (WhatAmI == ChanceForBulldozer)
-        {
-            Instantiate(Bulldozer, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
-        }
-        else if (WhatAmI == ChanceForRanger)
-        {
-            Instantiate(Ranger, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
-        }
-        else if (WhatAmI <= ChanceForShark && WhatAmI > 1)
-        {
-            Instantiate(Shark, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
-        }
-        else
-        {
-            Instantiate(Clanker, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+            case Enemy_Types.Standard:
+                // Standard enemy type
+                Instantiate(Clanker, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                break;
+            case Enemy_Types.Ranger:
+                // Ranger enemy type
+                Instantiate(Ranger, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                break;
+            case Enemy_Types.Shark:
+                // Shark enemy type
+                Instantiate(Shark, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                break;
+            case Enemy_Types.Bulldozer:
+                // Bulldozer enemy type
+                Instantiate(Bulldozer, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                break;
+            case Enemy_Types.Medic:
+                // Medic enemy type
+                Instantiate(Medic, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                break;
+            case Enemy_Types.Officer:
+                // Officer enemy type
+                break;
         }
     }
 

@@ -18,8 +18,8 @@ public class WaveManager_Script : MonoBehaviour
 
 
     // End Formation Variables
-    const int Starting_EnemyReserve = 40;
-    public int Current_EnemyReserve = Starting_EnemyReserve;
+    public int Starting_EnemyReserve = 40;
+    public int Current_EnemyReserve = 40;
 
     const int Starting_MaxNumOfEnemiesAliveAtOnce = 12;
     public int Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce;
@@ -41,11 +41,17 @@ public class WaveManager_Script : MonoBehaviour
 
 
     [SerializeField] Difficulty_Levels CurrentDifficultyLevel;
-    [SerializeField] DifficultyLevel SelectedDifficultyClassInformation; // Easy access to whatever difficulty class we're at right now
+    public DifficultyLevel SelectedDifficultyClassInformation = new DifficultyLevel(); // Easy access to whatever difficulty class we're at right now
+
+    public List<Enemy_Types> EliteEnemyList = new List<Enemy_Types>();
+    public List<Enemy_Types> AdvancedEnemyList = new List<Enemy_Types>();
 
     void Start()
     {
         // Start_New_Wave();
+        EliteEnemyList.Add(Enemy_Types.Ranger);
+        EliteEnemyList.Add(Enemy_Types.Shark);
+        AdvancedEnemyList.Add(Enemy_Types.Bulldozer);
         CreateDifficulties();
     }
 
@@ -83,7 +89,7 @@ public class WaveManager_Script : MonoBehaviour
     {
         currentWave = 0;
         SetNewDifficulty(NewDifficultlyLevel);
-
+        Current_Formation_Size = SelectedDifficultyClassInformation.BaseFormationAmount;
         Start_New_Wave();
     }
 
@@ -112,29 +118,8 @@ public class WaveManager_Script : MonoBehaviour
     public void Start_New_Wave()
     {
         currentWave += 1;
-        switch (CurrentDifficultyLevel)
-        {
-            case Difficulty_Levels.Battalion: // Easy && Quicker
-                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) / 3; // Faster Waves
-                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
-                break;
-            case Difficulty_Levels.Regiment: // Easier
-                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) / 2;
-                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
-                break;
-            case Difficulty_Levels.Brigade: // Fairest
-                Current_EnemyReserve = Starting_EnemyReserve * currentWave;
-                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
-                break;
-            case Difficulty_Levels.Division: // Difficult
-                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) * 2;
-                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
-                break;
-            case Difficulty_Levels.Army: // Most difficult && Longest
-                Current_EnemyReserve = (Starting_EnemyReserve * currentWave) * 3; // Much Longer Waves
-                Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
-                break;
-        }
+        Current_EnemyReserve = SelectedDifficultyClassInformation.BaseReserveAmount;
+        Current_MaxNumOfEnemiesAliveAtOnce = Starting_MaxNumOfEnemiesAliveAtOnce * currentWave;
         if (Current_MaxNumOfEnemiesAliveAtOnce > 80)
         {
             // Test limit: don't spawn more than 80 at once to prevent lag.
@@ -201,27 +186,35 @@ public class WaveManager_Script : MonoBehaviour
         // Considers the current wave and the current difficulty level
         var AI_Manager_Script = this.gameObject.GetComponentInChildren<AI_GameManager>();
         Current_EnemyReserve -= 1;
-        switch (CurrentDifficultyLevel)
+        var WaveToSpawnEliteUnits = SelectedDifficultyClassInformation.WaveToSpawnEliteUnits;
+        var WaveToSpawnAdvancedUnits = SelectedDifficultyClassInformation.WaveToSpawnAdvancedUnits;
+
+        if (currentWave >= WaveToSpawnAdvancedUnits)
         {
-            case Difficulty_Levels.Battalion: // Easy && Quicker
-                Current_Formation_Size = 1000;
-                break;
-            case Difficulty_Levels.Regiment: // Easier
-                Current_Formation_Size = 3000;
-                break;
-            case Difficulty_Levels.Brigade: // Fairest
-                Current_Formation_Size = 7500;
-                break;
-            case Difficulty_Levels.Division: // Difficult
-                Current_Formation_Size = 15000;
-                break;
-            case Difficulty_Levels.Army: // Most difficult && Longest
-                Current_Formation_Size = 100000;
-                break;
+            var ChanceToSpawnAdvancedUnit = (SelectedDifficultyClassInformation.BaseChanceForAdvancedUnit + (currentWave * SelectedDifficultyClassInformation.IncreaseChanceForAdvancedPerWave)) / 100;
+            if (UnityEngine.Random.Range(0, 1) <= ChanceToSpawnAdvancedUnit)
+            {
+                var NumAdvancedEnemies = EliteEnemyList.Count;
+                var ChoiceOfAdvancedUnit = UnityEngine.Random.Range(0, NumAdvancedEnemies);
+                AI_Manager_Script.Spawn_Enemy(EliteEnemyList[ChoiceOfAdvancedUnit]);
+                return;
+            }
         }
+
+        if (currentWave >= WaveToSpawnEliteUnits)
+        {
+            var ChanceToSpawnEliteUnit = SelectedDifficultyClassInformation.BaseChanceForEliteUnit + (currentWave * SelectedDifficultyClassInformation.IncreaseChanceForElitePerWave);
+            if (UnityEngine.Random.Range(0, 100) <= ChanceToSpawnEliteUnit)
+            {
+                var NumEliteEnemies = EliteEnemyList.Count;
+                var ChoiceOfEliteUnit = UnityEngine.Random.Range(0, NumEliteEnemies);
+                AI_Manager_Script.Spawn_Enemy(EliteEnemyList[ChoiceOfEliteUnit]);
+                return;
+            }
+        }
+        AI_Manager_Script.Spawn_Enemy(Enemy_Types.Standard);
         // Debug.Log(Current_EnemyReserve);
         // Debug.Log("Spawning a new enemy for the wave!");
-        AI_Manager_Script.Spawn_Enemy();
     }
 
     void EndThisWave()
