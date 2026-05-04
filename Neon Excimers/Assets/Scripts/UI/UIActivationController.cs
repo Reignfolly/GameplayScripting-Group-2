@@ -10,6 +10,8 @@ public class UIActivationController : MonoBehaviour
     public GameObject StartScreen;
     public GameObject DeathScreen;
 
+    public UpgradeSelector upgradeSelector;
+
 
 
     private bool isPaused = false;
@@ -44,7 +46,15 @@ public class UIActivationController : MonoBehaviour
     }
 
     public void ActivateUpgradeMenu()
-    {
+    {   
+        if (upgradeSelector != null)
+        {
+            upgradeSelector.RandomizeUpgrades();
+        }
+        else
+        {
+            Debug.LogWarning("UpgradeSelector reference is missing on UIActivationController!");
+        }
         UpgradeMenu.SetActive(true);
         PauseTime();
     }
