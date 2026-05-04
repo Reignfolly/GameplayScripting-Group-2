@@ -18,6 +18,7 @@ public class GameFlowManager : MonoBehaviour
         WeaponStats.rangeModifier = 0f;
         WeaponStats.damageModifier = 0f;
         WeaponStats.areaModifier = 0f;
+        WeaponStats.attackSpeedModifier = 0f;
         PlayerStats.moveSpeedModifier = 0f;
         PlayerStats.accelerationModifier = 0f;
         PlayerStats.dashSpeedModifier = 0f;
