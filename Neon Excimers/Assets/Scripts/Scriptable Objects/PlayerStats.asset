@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6e0dd1c33c5ff41988a319d01a6d3c, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  KillCount: 0
-  baseMoveSpeed: 15
+  KillCount: 2
+  baseMoveSpeed: 16
   baseAcceleration: 25
   baseDashSpeed: 38
   baseDashDuration: 0.4
