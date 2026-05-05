@@ -2963,6 +2963,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: aef10adf0d3286e429a88ee9fca254a9, type: 2}
+  - {fileID: 2100000, guid: aef10adf0d3286e429a88ee9fca254a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5719,20 +5720,20 @@ MonoBehaviour:
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 5
   BrigadeDiff:
-    Name: Company
-    Description: A quick test of your skills.
-    DifficultyEnum: 0
+    Name: Brigade
+    Description: A Fair Fight
+    DifficultyEnum: 3
     BaseReserveAmount: 20
-    BaseFormationAmount: 200
-    WaveToSpawnEliteUnits: 3
-    BaseChanceForEliteUnit: 10
-    MaxChanceForEliteUnit: 35
+    BaseFormationAmount: 5500
+    WaveToSpawnEliteUnits: 2
+    BaseChanceForEliteUnit: 5
+    MaxChanceForEliteUnit: 20
     IncreaseChanceForElitePerWave: 1
-    WaveToSpawnAdvancedUnits: 6
-    BaseChanceForAdvancedUnit: 1
+    WaveToSpawnAdvancedUnits: 4
+    BaseChanceForAdvancedUnit: 10
     MaxChanceForAdvancedUnit: 10
     IncreaseChanceForAdvancedPerWave: 1
-    TimeBetweenSpawns: 5
+    TimeBetweenSpawns: 0.8
   DivisionDiff:
     Name: Division
     Description: A long and difficult fight.
@@ -5763,7 +5764,7 @@ MonoBehaviour:
     MaxChanceForAdvancedUnit: 15
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 0.4
-  CurrentDifficultyLevel: 5
+  CurrentDifficultyLevel: 3
   SelectedDifficultyClassInformation:
     Name: Battalion
     Description: A relaxed and quick battle.
