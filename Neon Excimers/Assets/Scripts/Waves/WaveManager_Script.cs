@@ -337,7 +337,14 @@ public class WaveManager_Script : MonoBehaviour
                 return;
             }
         }
+        if (UnityEngine.Random.Range(1, 20) <= 1)
+        {
+            AI_Manager_Script.Spawn_Enemy(Enemy_Types.Medic);
+            return;
+        }
         AI_Manager_Script.Spawn_Enemy(Enemy_Types.Standard);
+
+
         // Debug.Log(Current_EnemyReserve);
         // Debug.Log("Spawning a new enemy for the wave!");
     }

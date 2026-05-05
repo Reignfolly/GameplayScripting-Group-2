@@ -89,16 +89,17 @@ public class LaserShooter : MonoBehaviour
 
             spawnWeaponEffects(hit.point);
 
-            if (hit.collider.CompareTag("Enemy"))
+            if (hit.collider.transform.root.CompareTag("Enemy"))
             {
                 // Handles the creation of temporary sound object holders
                 GameObject HitSound = Instantiate(HitSoundPrefab);
                 HitSound.transform.position = hit.transform.position;
-                var hp = hit.collider.GetComponent<Health_Module>();
+                var hp = hit.collider.transform.root.GetComponent<Health_Module>();
 
 
                 if (hp != null)
                     hp.TakeDamage((int)damage);
+
             }
         }
         else
@@ -113,16 +114,18 @@ public class LaserShooter : MonoBehaviour
                 FarEnd = hit.point;
                 spawnWeaponEffects(hit.point);
 
-                if (hit.collider.CompareTag("Enemy"))
+                if (hit.collider.transform.root.CompareTag("Enemy"))
                 {
                     // Handles the creation of temporary sound object holders
                     GameObject HitSound = Instantiate(HitSoundPrefab);
                     HitSound.transform.position = hit.transform.position;
-                    var hp = hit.collider.GetComponent<Health_Module>();
+                    var hp = hit.collider.transform.root.GetComponent<Health_Module>();
 
 
                     if (hp != null)
+                    {
                         hp.TakeDamage((int)damage / 6);
+                    }
                 }
             }
             else

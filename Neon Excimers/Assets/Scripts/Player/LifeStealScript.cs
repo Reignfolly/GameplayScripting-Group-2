@@ -22,6 +22,6 @@ public class LifeStealScript : MonoBehaviour
     public void GiveMeHealth()
     {
         PlayerHealthModule.TakeDamage(-1);
-        Debug.Log("Orbi has reaped yet another silicon soul.");
+        //Debug.Log("Orbi has reaped yet another silicon soul.");
     }
 }
