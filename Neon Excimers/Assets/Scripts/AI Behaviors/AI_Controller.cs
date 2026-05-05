@@ -33,13 +33,13 @@ public class AI_Controller : MonoBehaviour
 
     // These are for the "Shark" enemy type
 
-    private int SharkRushPositionOffset = 40;
+    public int SharkRushPositionOffset = 40;
     private bool CompletedRush = false;
     private bool SelectedRushPosition = false;
     private Vector3 ChosenRushPositionOffset;
     private Vector3 SnapshotOfPlayerPosition;
 
-    private float SharkRushSpeedMult = 3f;
+    public float SharkRushSpeedMult = 3f;
 
 
     // This variable determines AI behavior. All AI behavior types are stored in this script.

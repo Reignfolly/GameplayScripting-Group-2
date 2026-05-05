@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 8002718080726304542}
   - component: {fileID: 3898801199432240412}
   - component: {fileID: 3166503020154044079}
-  - component: {fileID: 4329125528309084232}
   - component: {fileID: 1173969746099014947}
   - component: {fileID: 28521113514426873}
   - component: {fileID: 1767406683084268360}
   - component: {fileID: -2306163005861395565}
   - component: {fileID: 7301897707696683821}
   - component: {fileID: 6237427014459724431}
+  - component: {fileID: 4188785395353113264}
   m_Layer: 0
   m_Name: Clanker
   m_TagString: Enemy
@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.37, y: 9.76, z: -8.78}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 735925050756866265}
@@ -48,7 +48,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7123676386572213658}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4286054379772774432, guid: 169e00baed62c464e9fc882bded60e0d, type: 3}
 --- !u!23 &3166503020154044079
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73,6 +73,14 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -705403566258645575, guid: 169e00baed62c464e9fc882bded60e0d, type: 3}
+  - {fileID: -705403566258645575, guid: 169e00baed62c464e9fc882bded60e0d, type: 3}
+  - {fileID: -705403566258645575, guid: 169e00baed62c464e9fc882bded60e0d, type: 3}
+  - {fileID: -584970906720007987, guid: b8fafe73fde357e45b79eb25cdbb14fa, type: 3}
+  - {fileID: -5629231248691771127, guid: b8fafe73fde357e45b79eb25cdbb14fa, type: 3}
+  - {fileID: -1005774537853082030, guid: b8fafe73fde357e45b79eb25cdbb14fa, type: 3}
+  - {fileID: -6973200339764893580, guid: b8fafe73fde357e45b79eb25cdbb14fa, type: 3}
+  - {fileID: -5629231248691771127, guid: b8fafe73fde357e45b79eb25cdbb14fa, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,27 +102,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4329125528309084232
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7123676386572213658}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.1407036, y: 1.1407036, z: 1.1407036}
-  m_Center: {x: 0, y: 0, z: -0.070351146}
 --- !u!195 &1173969746099014947
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -154,6 +141,8 @@ MonoBehaviour:
   PlayerAsTarget: {fileID: 0}
   AI_Navigation_agent: {fileID: 0}
   FriendlyTarget: {fileID: 0}
+  SharkRushPositionOffset: 40
+  SharkRushSpeedMult: 3
   MyEnemy_AI_Type: 0
 --- !u!114 &1767406683084268360
 MonoBehaviour:
@@ -222,6 +211,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &4188785395353113264
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123676386572213658}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4286054379772774432, guid: 169e00baed62c464e9fc882bded60e0d, type: 3}
 --- !u!1 &8184985084951483157
 GameObject:
   m_ObjectHideFlags: 0
