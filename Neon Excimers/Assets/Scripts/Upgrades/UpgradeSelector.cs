@@ -92,7 +92,8 @@ public class UpgradeSelector : MonoBehaviour
             
             GameObject obj = allUpgrades[upgradeIndex].upgradeObject;
             obj.SetActive(true);
-            obj.transform.position = new Vector3(xPositions[i], obj.transform.position.y, obj.transform.position.z);
+            RectTransform rect = obj.GetComponent<RectTransform>();
+            rect.anchoredPosition = new Vector2(xPositions[i], rect.anchoredPosition.y);
 
             
             //removes the selected index from the list so we don't pick the same upgrade twice in the same window.
