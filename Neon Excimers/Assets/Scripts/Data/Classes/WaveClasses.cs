@@ -29,4 +29,5 @@ public class DifficultyLevel
     public float IncreaseChanceForAdvancedPerWave = 1f; // Increase the chance for Advanced units per wave
 
     public float TimeBetweenSpawns = 5f; // The time the WaveManager will wait between spawns of individual enemies.
+    public int SquadSize = 5;
 }

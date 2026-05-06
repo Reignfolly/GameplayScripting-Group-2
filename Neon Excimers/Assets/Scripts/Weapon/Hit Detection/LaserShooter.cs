@@ -30,6 +30,7 @@ public class LaserShooter : MonoBehaviour
 
     public GameObject hitEffect;
 
+    public LayerMask IgnoreThisLayer;
     void Awake()
     {
         UpdateGunStats();
@@ -65,7 +66,7 @@ public class LaserShooter : MonoBehaviour
 
         Vector3 target;
 
-        if (Physics.Raycast(ray, out RaycastHit mouseHit))
+        if (Physics.Raycast(ray, out RaycastHit mouseHit, 9999, ~IgnoreThisLayer))
         {
             target = mouseHit.point;
         }
@@ -83,7 +84,7 @@ public class LaserShooter : MonoBehaviour
         Vector3 end;
 
         // Normal Laser
-        if (Physics.Raycast(start, direction, out hit, range))
+        if (Physics.Raycast(start, direction, out hit, range, ~IgnoreThisLayer))
         {
             end = hit.point;
 
@@ -106,10 +107,10 @@ public class LaserShooter : MonoBehaviour
         {
             end = start + direction * range;
 
-            // This is for the Whitish Blue laser
+            // This is for the Far Laser
             var FarStart = end;
             var FarEnd = end;
-            if (Physics.Raycast(FarStart, direction, out hit, (range * 2)))
+            if (Physics.Raycast(FarStart, direction, out hit, (range * 1.25f), ~IgnoreThisLayer))
             {
                 FarEnd = hit.point;
                 spawnWeaponEffects(hit.point);
@@ -124,7 +125,7 @@ public class LaserShooter : MonoBehaviour
 
                     if (hp != null)
                     {
-                        hp.TakeDamage((int)damage / 6);
+                        hp.TakeDamage((int)damage / 3);
                     }
                 }
             }

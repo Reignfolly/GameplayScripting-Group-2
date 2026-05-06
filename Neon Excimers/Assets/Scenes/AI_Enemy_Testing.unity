@@ -525,6 +525,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &409551905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7123676386572213658, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_Name
+      value: Medic (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.964115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.168491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -170.79189
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
 --- !u!1 &425714422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3724,11 +3781,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8202cef8977b144b7c1e6dea2c85b8, type: 3}
---- !u!1 &1149892770 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5216297950802292273, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
-  m_PrefabInstance: {fileID: 279151963204095387}
-  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1117988081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7123676386572213658, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_Name
+      value: Medic (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.967688
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.168491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -173.92734
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002718080726304542, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 781c0cfa5fd8a514db90a2a709d638c7, type: 3}
 --- !u!1 &1158878603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5690,11 +5799,11 @@ MonoBehaviour:
   Current_WaveSpawnCooldown: 0
   Current_EnemySpawnCooldown: 0
   BattalionDiff:
-    Name: Company
-    Description: A quick test of your skills.
-    DifficultyEnum: 0
-    BaseReserveAmount: 20
-    BaseFormationAmount: 200
+    Name: Battalion
+    Description: A fast and easy fight.
+    DifficultyEnum: 1
+    BaseReserveAmount: 30
+    BaseFormationAmount: 1000
     WaveToSpawnEliteUnits: 3
     BaseChanceForEliteUnit: 10
     MaxChanceForEliteUnit: 35
@@ -5704,12 +5813,13 @@ MonoBehaviour:
     MaxChanceForAdvancedUnit: 10
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 5
+    SquadSize: 5
   RegimentDiff:
-    Name: Company
-    Description: A quick test of your skills.
-    DifficultyEnum: 0
-    BaseReserveAmount: 20
-    BaseFormationAmount: 200
+    Name: Regiment
+    Description: A light challenge.
+    DifficultyEnum: 2
+    BaseReserveAmount: 35
+    BaseFormationAmount: 3000
     WaveToSpawnEliteUnits: 3
     BaseChanceForEliteUnit: 10
     MaxChanceForEliteUnit: 35
@@ -5719,11 +5829,12 @@ MonoBehaviour:
     MaxChanceForAdvancedUnit: 10
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 5
+    SquadSize: 5
   BrigadeDiff:
     Name: Brigade
-    Description: A Fair Fight
+    Description: A fair fight.
     DifficultyEnum: 3
-    BaseReserveAmount: 20
+    BaseReserveAmount: 40
     BaseFormationAmount: 5500
     WaveToSpawnEliteUnits: 2
     BaseChanceForEliteUnit: 5
@@ -5734,11 +5845,12 @@ MonoBehaviour:
     MaxChanceForAdvancedUnit: 10
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 0.8
+    SquadSize: 6
   DivisionDiff:
     Name: Division
     Description: A long and difficult fight.
     DifficultyEnum: 4
-    BaseReserveAmount: 80
+    BaseReserveAmount: 90
     BaseFormationAmount: 15000
     WaveToSpawnEliteUnits: 2
     BaseChanceForEliteUnit: 10
@@ -5749,11 +5861,12 @@ MonoBehaviour:
     MaxChanceForAdvancedUnit: 10
     IncreaseChanceForAdvancedPerWave: 3
     TimeBetweenSpawns: 0.75
+    SquadSize: 8
   ArmyDiff:
     Name: Army
     Description: You're going to lose.
     DifficultyEnum: 5
-    BaseReserveAmount: 100
+    BaseReserveAmount: 120
     BaseFormationAmount: 100000
     WaveToSpawnEliteUnits: 1
     BaseChanceForEliteUnit: 5
@@ -5764,6 +5877,7 @@ MonoBehaviour:
     MaxChanceForAdvancedUnit: 15
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 0.4
+    SquadSize: 10
   CurrentDifficultyLevel: 3
   SelectedDifficultyClassInformation:
     Name: Battalion
@@ -5780,6 +5894,7 @@ MonoBehaviour:
     MaxChanceForAdvancedUnit: 8
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 10
+    SquadSize: 5
   EliteEnemyList: 
   AdvancedEnemyList: 
   GameStarted: 0
@@ -6142,32 +6257,29 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8470634640719620237, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
   m_PrefabInstance: {fileID: 279151963204095387}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149892770}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78abd44a98df1d34a9453b667b606c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1675411232
+--- !u!114 &1675411232 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4719667912257368019, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+  m_PrefabInstance: {fileID: 279151963204095387}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149892770}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d177c552c954143b421fdb8e2015ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerStats: {fileID: 0}
-  PlayerHealthModule: {fileID: 1675411231}
 --- !u!114 &1675411234 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
   m_PrefabInstance: {fileID: 279151963204095387}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149892770}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcc5f11d0c489e242bbd2d7efca0e9fb, type: 3}
@@ -8427,25 +8539,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 733060944}
     - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
-      propertyPath: hitEffect
-      value: 
-      objectReference: {fileID: 1288335294657651641, guid: bcededda7de2f4b45b091d24f8a53362, type: 3}
-    - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
-      propertyPath: WeaponStats
-      value: 
-      objectReference: {fileID: 11400000, guid: 706983253e054784db91de8d4ea0a34e, type: 2}
-    - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
-      propertyPath: FarLaserPrefab
-      value: 
-      objectReference: {fileID: 5410290667742150864, guid: 150f1e685d2306d45a68306adc9d85e4, type: 3}
-    - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
-      propertyPath: HitSoundPrefab
-      value: 
-      objectReference: {fileID: 367067574792746393, guid: 29d1d968d7176b54ab49f1bb3031a71b, type: 3}
-    - target: {fileID: 4701953597886762008, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
-      propertyPath: LaserFireSoundPrefab
-      value: 
-      objectReference: {fileID: 367067574792746393, guid: 2ad202b3907569543ad0d17414ad4ea5, type: 3}
+      propertyPath: IgnoreThisLayer.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 5216297950802292273, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8501,10 +8597,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5216297950802292273, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1675411232}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
 --- !u!1001 &2142854345448819253
 PrefabInstance:
@@ -9337,3 +9430,5 @@ SceneRoots:
   - {fileID: 1497224608}
   - {fileID: 1312196020}
   - {fileID: 1495916534}
+  - {fileID: 1117988081}
+  - {fileID: 409551905}

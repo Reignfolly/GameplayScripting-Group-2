@@ -322,6 +322,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 757319449785685816, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3948646705470184410}
+    - targetCorrespondingSourceObject: {fileID: 757319449785685816, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4719667912257368019}
   m_SourcePrefab: {fileID: 100100000, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
 --- !u!1 &5216297950802292273 stripped
 GameObject:
@@ -340,17 +343,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc5f11d0c489e242bbd2d7efca0e9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponStats: {fileID: 0}
+  WeaponStats: {fileID: 11400000, guid: 706983253e054784db91de8d4ea0a34e, type: 2}
   firePoint: {fileID: 187418377285275010}
   cam: {fileID: 0}
   laserPrefab: {fileID: 5410290667742150864, guid: e62cd9a561da77943969d6095751ebc9, type: 3}
+  FarLaserPrefab: {fileID: 5410290667742150864, guid: 150f1e685d2306d45a68306adc9d85e4, type: 3}
   range: 25
   damage: 50
   duration: 0.15
   width: 0.2
   fireRate: 0.08
   showDebug: 0
-  HitSoundPrefab: {fileID: 0}
+  HitSoundPrefab: {fileID: 367067574792746393, guid: 29d1d968d7176b54ab49f1bb3031a71b, type: 3}
+  LaserFireSoundPrefab: {fileID: 367067574792746393, guid: 2ad202b3907569543ad0d17414ad4ea5, type: 3}
+  hitEffect: {fileID: 1288335294657651641, guid: bcededda7de2f4b45b091d24f8a53362, type: 3}
+  IgnoreThisLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!82 &3948646705470184410
 AudioSource:
   m_ObjectHideFlags: 0
@@ -448,8 +457,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4719667912257368019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216297950802292273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d177c552c954143b421fdb8e2015ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerStats: {fileID: 0}
+  PlayerHealthModule: {fileID: 8470634640719620237}
 --- !u!4 &6312587809061791640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1548209632068345489, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
   m_PrefabInstance: {fileID: 4820691494708148489}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8470634640719620237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3993342721273450884, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
+  m_PrefabInstance: {fileID: 4820691494708148489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216297950802292273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78abd44a98df1d34a9453b667b606c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

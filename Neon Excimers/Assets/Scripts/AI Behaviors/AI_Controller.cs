@@ -116,13 +116,14 @@ public class AI_Controller : MonoBehaviour
     {
         if (SelectedRushPosition == false)
         {
-            var NewRushPosition = UnityEngine.Random.Range(1, 4);
+            var NewRushPosition = UnityEngine.Random.Range(1, 8);
             switch (NewRushPosition)
             {
                 // Think of this as a clock. 1 is 12, 4 is 9.
                 // Okay that might not be helpful.
                 // Think of it like a compass. 1 is North, 4 is West
                 // Does that make sense?
+                // 5-8 is corners
                 case 1:
                     ChosenRushPositionOffset = new Vector3(0, 0, SharkRushPositionOffset);
                     break;
@@ -135,6 +136,19 @@ public class AI_Controller : MonoBehaviour
                 case 4:
                     ChosenRushPositionOffset = new Vector3(-SharkRushPositionOffset, 0, 0);
                     break;
+                case 5:
+                    ChosenRushPositionOffset = new Vector3(SharkRushPositionOffset, 0, SharkRushPositionOffset);
+                    break;
+                case 6:
+                    ChosenRushPositionOffset = new Vector3(SharkRushPositionOffset, 0, -SharkRushPositionOffset);
+                    break;
+                case 7:
+                    ChosenRushPositionOffset = new Vector3(-SharkRushPositionOffset, 0, -SharkRushPositionOffset);
+                    break;
+                case 8:
+                    ChosenRushPositionOffset = new Vector3(-SharkRushPositionOffset, 0, SharkRushPositionOffset);
+                    break;
+
             }
             SelectedRushPosition = true;
         }
@@ -212,6 +226,7 @@ public class AI_Controller : MonoBehaviour
     private void ShootRangedWeapon(NavMeshAgent AI_Navigation_agent, GameObject PlayerAsTarget)
     {
         var MyRangedAttackScript = this.gameObject.GetComponentInChildren<AI_RangedAttack>();
+        transform.LookAt(PlayerAsTarget.transform);
         MyRangedAttackScript.DoRangedAttackASAP();
     }
 

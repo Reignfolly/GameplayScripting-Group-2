@@ -9,6 +9,8 @@ public class AI_HealingAura : MonoBehaviour
     public float Current_HealingTimer = .1f;
 
     public GameObject HealFX;
+
+    public int AmountToHeal = 10;
     void Start()
     {
         HealingDebounce = false;
@@ -29,25 +31,51 @@ public class AI_HealingAura : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other1)
     {
-        if (HealingDebounce == false)
-        {
-            //Debug.Log("I began healing another enemy!");
-            HealingDebounce = true;
-            if (other.gameObject.tag == "Enemy")
-            {
-                var EnemyHealthModule = other.gameObject.GetComponent<Health_Module>();
-                // Negative values means healing
-                EnemyHealthModule.TakeDamage(-5);
-                SpawnHealFX(other.gameObject.transform.position);
-            }
+        HealContinually(other1);
+    }
 
-            //Debug.Log("I collided with: " + other.gameObject.name);
-        }
+    void OnTriggerStay(Collider other)
+    {
+        HealWithCooldown(other);
+    }
+
+    /*void OnCollisionEnter(Collider other2)
+    {
+        HealContinually(other2);
     }
 
     void OnCollisionStay(Collision other)
+    {
+        HealWithCooldown(other);
+    }*/
+
+
+
+    void SpawnHealFX(Vector3 HitPoint)
+    {
+        GameObject NewHealFX = Instantiate(HealFX, HitPoint, Quaternion.identity);
+    }
+
+
+
+    void HealContinually(Collider other)
+    {
+        //Debug.Log("I began healing another enemy!");
+        HealingDebounce = true;
+        if (other.gameObject.tag == "Enemy")
+        {
+            var EnemyHealthModule = other.gameObject.GetComponent<Health_Module>();
+            // Negative values means healing
+            EnemyHealthModule.TakeDamage(-AmountToHeal);
+            SpawnHealFX(other.gameObject.transform.position);
+        }
+        //Debug.Log("I collided with: " + other.gameObject.name);
+    }
+
+
+    void HealWithCooldown(Collider other)
     {
         if (HealingDebounce == false)
         {
@@ -57,16 +85,11 @@ public class AI_HealingAura : MonoBehaviour
             {
                 var EnemyHealthModule = other.gameObject.GetComponent<Health_Module>();
                 // Negative values means healing
-                EnemyHealthModule.TakeDamage(-5);
+                EnemyHealthModule.TakeDamage(-AmountToHeal);
                 SpawnHealFX(other.gameObject.transform.position);
             }
 
             //Debug.Log("I collided with: " + other.gameObject.name);
         }
-    }
-
-    void SpawnHealFX(Vector3 HitPoint)
-    {
-        GameObject NewHealFX = Instantiate(HealFX, HitPoint, Quaternion.identity);
     }
 }

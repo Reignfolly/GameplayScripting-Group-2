@@ -308,19 +308,27 @@ public class WaveManager_Script : MonoBehaviour
     {
         // Considers the current wave and the current difficulty level
         var AI_Manager_Script = this.gameObject.GetComponentInChildren<AI_GameManager>();
-        Current_EnemyReserve -= 1;
+        var StandardSquadSize = SelectedDifficultyClassInformation.SquadSize;
+
         var WaveToSpawnEliteUnits = SelectedDifficultyClassInformation.WaveToSpawnEliteUnits;
         var WaveToSpawnAdvancedUnits = SelectedDifficultyClassInformation.WaveToSpawnAdvancedUnits;
+
+        var SquadSize_Standard = UnityEngine.Random.Range(1, StandardSquadSize);
+        var SquadSize_Elite = UnityEngine.Random.Range(1, (StandardSquadSize + 2) / 2);
+        var SquadSize_Advanced = UnityEngine.Random.Range(1, (StandardSquadSize + 2) / 3);
+
 
         if (currentWave >= WaveToSpawnAdvancedUnits)
         {
             var ChanceToSpawnAdvancedUnit = SelectedDifficultyClassInformation.BaseChanceForAdvancedUnit + (currentWave * SelectedDifficultyClassInformation.IncreaseChanceForAdvancedPerWave);
-            Debug.Log(ChanceToSpawnAdvancedUnit);
+            //Debug.Log(ChanceToSpawnAdvancedUnit);
             if (UnityEngine.Random.Range(0, 100) <= ChanceToSpawnAdvancedUnit)
             {
-                var NumAdvancedEnemies = EliteEnemyList.Count;
+                var NumAdvancedEnemies = AdvancedEnemyList.Count;
                 var ChoiceOfAdvancedUnit = UnityEngine.Random.Range(0, NumAdvancedEnemies);
-                AI_Manager_Script.Spawn_Enemy(EliteEnemyList[ChoiceOfAdvancedUnit]);
+                Current_EnemyReserve -= SquadSize_Advanced;
+                SpawnSquadOfEnemies(SquadSize_Advanced, AdvancedEnemyList[ChoiceOfAdvancedUnit]);
+                //AI_Manager_Script.Spawn_Enemy(EliteEnemyList[ChoiceOfAdvancedUnit]);
                 return;
             }
         }
@@ -328,21 +336,25 @@ public class WaveManager_Script : MonoBehaviour
         if (currentWave >= WaveToSpawnEliteUnits)
         {
             var ChanceToSpawnEliteUnit = SelectedDifficultyClassInformation.BaseChanceForEliteUnit + (currentWave * SelectedDifficultyClassInformation.IncreaseChanceForElitePerWave);
-            Debug.Log(ChanceToSpawnEliteUnit);
+            //Debug.Log(ChanceToSpawnEliteUnit);
             if (UnityEngine.Random.Range(0, 100) <= ChanceToSpawnEliteUnit)
             {
                 var NumEliteEnemies = EliteEnemyList.Count;
                 var ChoiceOfEliteUnit = UnityEngine.Random.Range(0, NumEliteEnemies);
-                AI_Manager_Script.Spawn_Enemy(EliteEnemyList[ChoiceOfEliteUnit]);
+                Current_EnemyReserve -= SquadSize_Elite;
+                SpawnSquadOfEnemies(SquadSize_Elite, EliteEnemyList[ChoiceOfEliteUnit]);
+                //AI_Manager_Script.Spawn_Enemy(EliteEnemyList[ChoiceOfEliteUnit]);
                 return;
             }
         }
+        Current_EnemyReserve -= SquadSize_Standard;
         if (UnityEngine.Random.Range(1, 20) <= 1)
         {
-            AI_Manager_Script.Spawn_Enemy(Enemy_Types.Medic);
+            SpawnSquadOfEnemies(SquadSize_Standard, Enemy_Types.Medic);
             return;
         }
-        AI_Manager_Script.Spawn_Enemy(Enemy_Types.Standard);
+        SpawnSquadOfEnemies(SquadSize_Standard, Enemy_Types.Standard);
+        //AI_Manager_Script.Spawn_Enemy(Enemy_Types.Standard);
 
 
         // Debug.Log(Current_EnemyReserve);
@@ -353,6 +365,15 @@ public class WaveManager_Script : MonoBehaviour
     {
         // Whatever needs to happen when the wave ends
         Start_New_Wave();
+    }
+
+    void SpawnSquadOfEnemies(int SquadSize, Enemy_Types EnemyTypeToSpawn)
+    {
+        var AI_Manager_Script = this.gameObject.GetComponentInChildren<AI_GameManager>();
+        for (int i = 0; i < SquadSize; i++)
+        {
+            AI_Manager_Script.Spawn_Enemy(EnemyTypeToSpawn);
+        }
     }
 
 
