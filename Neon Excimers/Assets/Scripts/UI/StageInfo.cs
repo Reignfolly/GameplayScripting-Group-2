@@ -1,18 +1,36 @@
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 public class StageInfo : MonoBehaviour
 {
     public PlayerStats PlayerStats;
     public WeaponStats WeaponStats;
     public TMP_Text WaveText;
-    public TMP_Text LevelText; 
+    public TMP_Text LevelText;
 
-    string level = "1";
-    string wave = "1";
+    UnityEvent StartNewWaveEvent;
+
+    int level = 1;
+    int wave = 0;
+
+    void Start()
+    {
+        if (StartNewWaveEvent == null)
+        {
+            StartNewWaveEvent = new UnityEvent();
+        }
+        StartNewWaveEvent.AddListener(IncrementWaveNumber);
+    }
+
+    public void IncrementWaveNumber()
+    {
+        wave += 1;
+    }
+
 
     // Update is called once per frame
     void Update()
-    {   
+    {
 
         WaveText.text = "Wave:" + wave;
         LevelText.text = "Level: " + level;

@@ -79,7 +79,7 @@ MonoBehaviour:
   AI_Navigation_agent: {fileID: 0}
   FriendlyTarget: {fileID: 0}
   SharkRushPositionOffset: 30
-  SharkRushSpeedMult: 4
+  SharkRushSpeedMult: 3
   MyEnemy_AI_Type: 1
 --- !u!114 &1767406683084268360
 MonoBehaviour:

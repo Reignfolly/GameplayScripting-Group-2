@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System;
 using System.Collections.Generic;
 
@@ -144,6 +145,8 @@ public class WaveManager_Script : MonoBehaviour
 
     public bool GameStarted = false;
 
+    public UnityEvent StartNewWaveEvent = new UnityEvent();
+
     void Start()
     {
         // Start_New_Wave();
@@ -154,6 +157,11 @@ public class WaveManager_Script : MonoBehaviour
 
         // This should ideally be called by an event or function. Something like a play button.
         Start_New_Game(CurrentDifficultyLevel);
+
+        if (StartNewWaveEvent == null)
+        {
+            StartNewWaveEvent = new UnityEvent();
+        }
     }
 
     // Update is called once per frame
@@ -204,6 +212,7 @@ public class WaveManager_Script : MonoBehaviour
     {
         if (GameStarted == false)
         {
+            Current_EnemyReserve = SelectedDifficultyClassInformation.BaseReserveAmount;
             GameStarted = true;
             currentWave = 0;
             SetNewDifficulty(NewDifficultlyLevel);
@@ -211,7 +220,6 @@ public class WaveManager_Script : MonoBehaviour
             Debug.Log("Beginning new game!");
             Debug.Log("Difficulty Level: " + CurrentDifficultyLevel);
             Debug.Log("Enemy Formation Size: " + Current_Formation_Size);
-            Start_New_Wave();
         }
     }
 
@@ -239,6 +247,7 @@ public class WaveManager_Script : MonoBehaviour
 
     public void Start_New_Wave()
     {
+        StartNewWaveEvent.Invoke();
         currentWave += 1;
         Current_EnemyReserve = SelectedDifficultyClassInformation.BaseReserveAmount;
         Current_MaxNumOfEnemiesAliveAtOnce = Current_EnemyReserve / 4;

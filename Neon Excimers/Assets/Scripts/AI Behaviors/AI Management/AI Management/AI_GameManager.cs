@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine.Events;
 
@@ -21,17 +22,13 @@ public class AI_GameManager : MonoBehaviour
 
     public int Current_Number_Of_Enemies = 0;
 
-    public int Spawn_X_Radius_rand = 120;
-    public int Spawn_Z_Radius_rand = 120;
+    public int Spawn_X_Radius_rand = 350;
+    public int Spawn_Z_Radius_rand = 350;
+
+    public AI_SpawnModes AI_Spawn_Location_Mode;
     public List<UnityEngine.GameObject> List_Of_Enemies = new List<UnityEngine.GameObject>();
     public List<UnityEngine.GameObject> List_Of_SpawnPoints = new List<UnityEngine.GameObject>();
-
-    // 1 in this chance for a medic to spawn
-    public int ChanceForMedic = 10;
-    public int ChanceForBulldozer = 30;
-    public int ChanceForRanger = 5;
-
-    public int ChanceForShark = 4;
+    public List<int> SpawnSafeZonePoints = new List<int>();
 
     public PlayerStats PlayerStats;
     public UnityEvent PlayerKilledEnemyEvent = new UnityEvent();
@@ -41,6 +38,10 @@ public class AI_GameManager : MonoBehaviour
         {
             PlayerKilledEnemyEvent = new UnityEvent();
         }
+        SpawnSafeZonePoints.Add(-100);
+        SpawnSafeZonePoints.Add(-150);
+        SpawnSafeZonePoints.Add(100);
+        SpawnSafeZonePoints.Add(150);
     }
 
     // Update is called once per frame
@@ -53,54 +54,64 @@ public class AI_GameManager : MonoBehaviour
             Spawn_Enemy();
         }*/
     }
-    void Spawn_Until_Max()
-    {
-        // Simply spawns enemies until the max number is reached
-        while (Current_Number_Of_Enemies < Maximum_Number_Of_Enemies)
-        {
-
-        }
-    }
-
-    void Spawn_Set_Number()
-    {
-        // Spawns enemies until either the max number of enemies are reached
-        // or spawns the full amount of given enemies.
-    }
 
     public void Spawn_Enemy(Enemy_Types NewEnemyToSpawn)
     {
         // Spawns an enemy at a random available spawn point
         // !! NOTE !! For now this script just finds the player's location 
         // and spawns them in a radius around them. 
-        var WhatAmI = UnityEngine.Random.Range(1, ChanceForBulldozer + 1);
         var x_Offset = UnityEngine.Random.Range(-Spawn_X_Radius_rand, Spawn_X_Radius_rand);
         var z_Offset = UnityEngine.Random.Range(-Spawn_Z_Radius_rand, Spawn_Z_Radius_rand);
 
+        if (Math.Abs(x_Offset) <= 90)
+        {
+            var New_PresetXOffset = UnityEngine.Random.Range(0, SpawnSafeZonePoints.Count);
+            x_Offset = SpawnSafeZonePoints[New_PresetXOffset];
+        }
+
+        if (Math.Abs(z_Offset) <= 90)
+        {
+            var New_PresetZOffset = UnityEngine.Random.Range(0, SpawnSafeZonePoints.Count);
+            z_Offset = SpawnSafeZonePoints[New_PresetZOffset];
+        }
+
+
+
         var NumberIn_SpawnPointList = UnityEngine.Random.Range(0, List_Of_SpawnPoints.Count);
-        var SpawnPointToSelect = List_Of_SpawnPoints[NumberIn_SpawnPointList].transform.position;
+        var SpawnPosition = List_Of_SpawnPoints[NumberIn_SpawnPointList].transform.position;
+
+        switch (AI_Spawn_Location_Mode)
+        {
+            case AI_SpawnModes.AroundPlayer:
+                SpawnPosition = GameObject.Find("Player").transform.position;
+                break;
+            case AI_SpawnModes.SpawnPoints:
+                SpawnPosition = List_Of_SpawnPoints[NumberIn_SpawnPointList].transform.position;
+                break;
+        }
+
 
         switch (NewEnemyToSpawn)
         {
             case Enemy_Types.Standard:
                 // Standard enemy type
-                Instantiate(Clanker, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                Instantiate(Clanker, new Vector3(SpawnPosition.x + x_Offset, 8f, SpawnPosition.z + z_Offset), Quaternion.identity);
                 break;
             case Enemy_Types.Ranger:
                 // Ranger enemy type
-                Instantiate(Ranger, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                Instantiate(Ranger, new Vector3(SpawnPosition.x + x_Offset, 8f, SpawnPosition.z + z_Offset), Quaternion.identity);
                 break;
             case Enemy_Types.Shark:
                 // Shark enemy type
-                Instantiate(Shark, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                Instantiate(Shark, new Vector3(SpawnPosition.x + x_Offset, 8f, SpawnPosition.z + z_Offset), Quaternion.identity);
                 break;
             case Enemy_Types.Bulldozer:
                 // Bulldozer enemy type
-                Instantiate(Bulldozer, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                Instantiate(Bulldozer, new Vector3(SpawnPosition.x + x_Offset, 8f, SpawnPosition.z + z_Offset), Quaternion.identity);
                 break;
             case Enemy_Types.Medic:
                 // Medic enemy type
-                Instantiate(Medic, new Vector3(SpawnPointToSelect.x + x_Offset, 8f, SpawnPointToSelect.z + z_Offset), Quaternion.identity);
+                Instantiate(Medic, new Vector3(SpawnPosition.x + x_Offset, 8f, SpawnPosition.z + z_Offset), Quaternion.identity);
                 break;
             case Enemy_Types.Officer:
                 // Officer enemy type

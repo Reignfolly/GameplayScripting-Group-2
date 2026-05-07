@@ -1,6 +1,7 @@
 using UnityEngine;
 public enum Enemy_Types { Standard, Shark, Bulldozer, Medic, Officer, Ranger };
 public enum Difficulty_Levels { Company, Battalion, Regiment, Brigade, Division, Army };
+public enum AI_SpawnModes { AroundPlayer, SpawnPoints };
 public class Enum_Declaration_script : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
