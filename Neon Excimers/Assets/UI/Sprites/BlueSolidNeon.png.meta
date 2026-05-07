@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e322d9582b1b6174bbca79d23c809727
+guid: 9a4c668c7e531c64784b6e46d2a439a5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 19-SolidNeon
+      name: BlueSolidNeon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,15 +105,15 @@ TextureImporter:
         width: 245
         height: 251
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 75, y: 75, z: 75, w: 75}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed826b39580c6e3439b98bbcac24b425
-      internalID: -1092580946
+      spriteID: 39de3ccd5ec031647a6e4aaaf680671c
+      internalID: -1440778234
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b02d573db3cc6d74bb5e66fee94901ea
+    spriteID: a76673b90fc27b542b808ca1900f89b8
     internalID: 0
     vertices: []
     indices: 
@@ -132,15 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      19-SolidNeon: -1092580946
-      19-SolidNeon_1: -1612799563
-      19-SolidNeon_2: 1712526020
-      19-SolidNeon_3: 1854026389
-      19-SolidNeon_4: 1057844327
-      19-SolidNeon_5: 9721933
-      19-SolidNeon_6: -836478819
-      19-SolidNeon_7: -350434879
-      19-SolidNeon_8: -1668259227
+      BlueSolidNeon_0: -1440778234
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

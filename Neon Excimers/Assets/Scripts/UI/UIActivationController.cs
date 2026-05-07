@@ -12,7 +12,7 @@ public class UIActivationController : MonoBehaviour
 
     public UpgradeSelector upgradeSelector;
 
-
+    public int KillCount = 0;
 
     private bool isPaused = false;
 
@@ -34,8 +34,8 @@ public class UIActivationController : MonoBehaviour
         {
             StatMenu.SetActive(false);
         }
-
-        if (PlayerStats.KillCount >= upgradeThreshold && UpgradeMenu.activeSelf == false && DeathScreen.activeSelf == false && StartScreen.activeSelf == false)
+        KillCount = PlayerStats.KillCount;
+        if (KillCount >= upgradeThreshold && UpgradeMenu.activeSelf == false && DeathScreen.activeSelf == false && StartScreen.activeSelf == false)
         {
             ActivateUpgradeMenu();
             ThresholdIncrement += 2;

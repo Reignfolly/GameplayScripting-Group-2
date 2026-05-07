@@ -125,13 +125,13 @@ public class LaserShooter : MonoBehaviour
 
                     if (hp != null)
                     {
-                        hp.TakeDamage((int)damage / 3);
+                        hp.TakeDamage((int)damage / 2); // Far laser does half damage
                     }
                 }
             }
             else
             {
-                FarEnd = FarStart + direction * (range * 2);
+                FarEnd = FarStart + direction * (range * 1);
             }
 
             SpawnFarLaser(FarStart, FarEnd);

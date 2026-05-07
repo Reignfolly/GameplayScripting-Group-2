@@ -135,13 +135,13 @@ public class UpgradeButtons : MonoBehaviour
 
     public void Upgrade_GlassCannon()
     {
-        weaponStats.damageModifier += 500f;
+        weaponStats.damageModifier += 300f;
         healthModule.Max_Health -= 90;
     }
 
     public void Upgrade_GlassDancer()
     {
-        playerStats.moveSpeedModifier += 500f;
+        playerStats.moveSpeedModifier += 300f;
         healthModule.Max_Health -= 90;
     }
 
