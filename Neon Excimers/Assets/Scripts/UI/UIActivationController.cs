@@ -6,6 +6,7 @@ public class UIActivationController : MonoBehaviour
     public GameObject UpgradeMenu;
     public GameObject PauseMenu;
     public GameObject StatMenu;
+    public GameObject OptionsMenu;
 
     public GameObject StartScreen;
     public GameObject DeathScreen;
@@ -21,10 +22,15 @@ public class UIActivationController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && DeathScreen.activeSelf == false && StartScreen.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && DeathScreen.activeSelf == false && StartScreen.activeSelf == false && OptionsMenu.activeSelf == false)
         {
             TogglePauseMenu();
         }
+        if (Input.GetKeyDown(KeyCode.Escape) && OptionsMenu.activeSelf == true)
+        {
+            ToggleOptionsMenu();
+        }
+
 
         if (Input.GetKey(KeyCode.Tab))
         {
@@ -65,8 +71,17 @@ public class UIActivationController : MonoBehaviour
         UnpauseTime();
     }
 
-    public void TogglePauseMenu()
+    public void ToggleOptionsMenu()
     {
+        OptionsMenu.SetActive(!OptionsMenu.activeSelf);
+    }
+
+    public void TogglePauseMenu()
+    {   
+        if(OptionsMenu.activeSelf)
+        {
+            OptionsMenu.SetActive(false);
+        }
         PauseMenu.SetActive(!PauseMenu.activeSelf);
         if (PauseMenu.activeSelf)
         {
