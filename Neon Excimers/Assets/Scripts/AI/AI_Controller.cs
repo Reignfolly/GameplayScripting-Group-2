@@ -305,8 +305,9 @@ public class AI_Controller : MonoBehaviour
 
         // AI: move to the player, then move around them for a bit, then charge at them.
         // Alternatively, move to the player, then immediately charge
+        float distanceToPlayer = Vector3.Distance(this.gameObject.transform.position, PlayerAsTarget.transform.position);
 
-        if (CompletedRush == false)
+        if (CompletedRush == false && distanceToPlayer >= 20)
         {
             if (SelectedRushPosition == true)
             {

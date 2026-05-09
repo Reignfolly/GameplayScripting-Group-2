@@ -7734,7 +7734,7 @@ MonoBehaviour:
     IncreaseChanceForAdvancedPerWave: 1
     TimeBetweenSpawns: 0.4
     SquadSize: 10
-  CurrentDifficultyLevel: 3
+  CurrentDifficultyLevel: 5
   SelectedDifficultyClassInformation:
     Name: Battalion
     Description: A relaxed and quick battle.
