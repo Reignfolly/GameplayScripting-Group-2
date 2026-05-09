@@ -13,6 +13,8 @@ public class UIActivationController : MonoBehaviour
     public UpgradeSelector upgradeSelector;
     public StageInfo stageInfo;
 
+    public StatDisplay statDisplay;
+
     public int KillCount = 0;
     private bool isPaused = false;
     public int upgradeThreshold = 10;
@@ -30,7 +32,8 @@ public class UIActivationController : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.Tab))
-        {
+        {   
+            statDisplay.UpdateStatsDisplay();
             StatMenu.SetActive(true);
         }
         else
