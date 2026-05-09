@@ -14,8 +14,8 @@ TagManager:
   - UI
   - IGNOREPlayerAttacks
   - EnemyRangedAttacks
-  - 
-  - 
+  - MapBorder
+  - EnemyHitboxes
   - 
   - 
   - 

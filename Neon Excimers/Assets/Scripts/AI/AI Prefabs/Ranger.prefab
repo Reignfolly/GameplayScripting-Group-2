@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7469900947659627945}
   - component: {fileID: 3630104789588647321}
   - component: {fileID: 2185164552851692502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ranger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 0.01
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 1622211384882327940}
   - component: {fileID: 8374501473817297310}
   - component: {fileID: 7050115342516046434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4791850044700173527}
   - component: {fileID: 8927653919452739781}
   - component: {fileID: 880792807473552349}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MeshRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 8597080531334568152}
   - component: {fileID: 2621545977824207705}
   - component: {fileID: 7126778484506327705}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
