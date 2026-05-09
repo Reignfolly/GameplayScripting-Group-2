@@ -1,0 +1,13 @@
+NEON Excimers Instructions
+
+Goal:
+The goal of the game is to last as long as possible against waves of oncoming enemies. Every 10 enemies you kill grant you a level up, which lets you choose 1 of 4 random upgrades. The threshold for leveling up increases by 2 for each successive level. Reach the highest level you can, and flex on your friends!
+
+Controls:
+WASD - Movement
+Left Click - Shoot
+Space - Dash
+Esc - Pause
+Tab - Stats Window
+
+Good luck and have fun!
