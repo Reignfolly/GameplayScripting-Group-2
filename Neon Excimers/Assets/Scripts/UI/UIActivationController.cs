@@ -7,19 +7,16 @@ public class UIActivationController : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject StatMenu;
     public GameObject OptionsMenu;
-
     public GameObject StartScreen;
     public GameObject DeathScreen;
 
     public UpgradeSelector upgradeSelector;
+    public StageInfo stageInfo;
 
     public int KillCount = 0;
-
     private bool isPaused = false;
-
     public int upgradeThreshold = 10;
     public int ThresholdIncrement = 0;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && DeathScreen.activeSelf == false && StartScreen.activeSelf == false && OptionsMenu.activeSelf == false)
@@ -62,6 +59,8 @@ public class UIActivationController : MonoBehaviour
             Debug.LogWarning("UpgradeSelector reference is missing on UIActivationController!");
         }
         UpgradeMenu.SetActive(true);
+        stageInfo.IncrementLevelNumber();
+
         PauseTime();
     }
 

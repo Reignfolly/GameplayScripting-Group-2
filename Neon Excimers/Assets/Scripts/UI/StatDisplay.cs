@@ -11,11 +11,7 @@ public class StatDisplay : MonoBehaviour
     {   
         if (StatText != null)
         {   
-           StatText.text = 
-    $"Attack Dmg: {WeaponStats.damage} ({WeaponStats.baseDamage} + {WeaponStats.damageModifier}%)\n" +
-    $"Attack Range: {WeaponStats.range} ({WeaponStats.baseRange} + {WeaponStats.rangeModifier}%)\n" +
-    $"Move Speed: {PlayerStats.moveSpeed} ({PlayerStats.baseMoveSpeed} + {PlayerStats.moveSpeedModifier}%)\n" +
-    $"Dash Cdn: {PlayerStats.dashCooldown} ({PlayerStats.baseDashCooldown} - {PlayerStats.dashCooldownModifier}%)";
+           StatText.text = $"Attack Dmg: {WeaponStats.damage} ({WeaponStats.baseDamage} + {WeaponStats.damageModifier}%)\n" + $"Attack Range: {WeaponStats.range} ({WeaponStats.baseRange} + {WeaponStats.rangeModifier}%)\n" + $"Move Speed: {PlayerStats.moveSpeed} ({PlayerStats.baseMoveSpeed} + {PlayerStats.moveSpeedModifier}%)\n" + $"Dash Cdn: {PlayerStats.dashCooldown} ({PlayerStats.baseDashCooldown} - {PlayerStats.dashCooldownModifier}%)";
              
 
         }

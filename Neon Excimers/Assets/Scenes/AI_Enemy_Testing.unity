@@ -11472,6 +11472,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1437369143578698563, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: stageInfo
+      value: 
+      objectReference: {fileID: 576577626}
+    - target: {fileID: 1437369143578698563, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
       propertyPath: DeathScreen
       value: 
       objectReference: {fileID: 1414504301}
@@ -11541,7 +11545,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3211893127632592371, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
       propertyPath: m_UiScaleMode
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211893127632592371, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211893127632592371, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211893127632592371, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211893127632592371, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211893127632592371, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3863540700215332188, guid: 366cc7fce738e364c8daceec797bf447, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

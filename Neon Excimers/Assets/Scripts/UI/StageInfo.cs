@@ -10,8 +10,9 @@ public class StageInfo : MonoBehaviour
 
     UnityEvent StartNewWaveEvent;
 
-    int level = 1;
+    int level = 0;
     int wave = 0;
+
 
     void Start()
     {
@@ -27,12 +28,17 @@ public class StageInfo : MonoBehaviour
         wave += 1;
     }
 
+    public void IncrementLevelNumber()
+    {
+        level += 1;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
 
-        WaveText.text = "Wave:" + wave;
+        WaveText.text = "Wave: " + wave;
         LevelText.text = "Level: " + level;
     }
 }
