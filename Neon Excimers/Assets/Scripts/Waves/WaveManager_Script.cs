@@ -277,7 +277,7 @@ public class WaveManager_Script : MonoBehaviour
 
         if (Current_EnemyReserve <= 0)
         {
-            if (Current_Number_Of_Enemies == 0)
+            if (Current_Number_Of_Enemies <= 0)
             {
                 Debug.Log("All enemies are dead, start a new wave.");
                 EndThisWave();
