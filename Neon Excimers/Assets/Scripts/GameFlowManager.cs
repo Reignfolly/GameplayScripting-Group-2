@@ -25,6 +25,7 @@ public class GameFlowManager : MonoBehaviour
         PlayerStats.dashDurationModifier = 0f;
         PlayerStats.dashCooldownModifier = 0f;
         PlayerStats.KillCount = 0;
+        PlayerStats.lifeSteal = 1;
         WeaponStats.UpgradeRefresh();
         PlayerStats.UpgradeRefresh();
 

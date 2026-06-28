@@ -23,7 +23,7 @@ public class LifeStealScript : MonoBehaviour
     // Update is called once per frame
     public void GiveMeHealth()
     {
-        PlayerHealthModule.TakeDamage(-LifeStealNumber);
+        PlayerHealthModule.TakeDamage(-PlayerStats.lifeSteal);
         //Debug.Log("Orbi has reaped yet another silicon soul.");
     }
 }

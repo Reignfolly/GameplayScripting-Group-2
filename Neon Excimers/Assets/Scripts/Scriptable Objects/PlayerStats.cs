@@ -5,6 +5,8 @@ public class PlayerStats : ScriptableObject
 {   
     public int KillCount = 0;
 
+    public int lifeSteal = 1;
+
     [Header("Base Stats")]
     public float baseMoveSpeed = 6f;        // How fast the player moves normally
     public float baseAcceleration = 20f;    // How quickly player reaches target speed (smoothness)

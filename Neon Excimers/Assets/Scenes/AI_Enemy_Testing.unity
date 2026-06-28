@@ -10940,6 +10940,10 @@ PrefabInstance:
       propertyPath: IgnoreThisLayer.m_Bits
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 4719667912257368019, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 85eaa0af91183f542adde4cb753e4cab, type: 2}
     - target: {fileID: 5216297950802292273, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
       propertyPath: m_Name
       value: Player
