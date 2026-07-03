@@ -325,6 +325,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 757319449785685816, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4719667912257368019}
+    - targetCorrespondingSourceObject: {fileID: 757319449785685816, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5948175142645976053}
   m_SourcePrefab: {fileID: 100100000, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}
 --- !u!1 &5216297950802292273 stripped
 GameObject:
@@ -353,6 +356,7 @@ MonoBehaviour:
   duration: 0.15
   width: 0.2
   fireRate: 0.08
+  PenetrationFactor: 3
   showDebug: 0
   HitSoundPrefab: {fileID: 367067574792746393, guid: 29d1d968d7176b54ab49f1bb3031a71b, type: 3}
   LaserFireSoundPrefab: {fileID: 367067574792746393, guid: 2ad202b3907569543ad0d17414ad4ea5, type: 3}
@@ -470,7 +474,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerStats: {fileID: 0}
+  LifeStealNumber: 1
   PlayerHealthModule: {fileID: 8470634640719620237}
+--- !u!114 &5948175142645976053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216297950802292273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2165e496d9650ca46a8c33a5efd85689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCharacterStats:
+    Name: Orbi
+    Description: The robot itself.
+    lifeSteal: 1
+    baseMoveSpeed: 6
+    baseAcceleration: 20
+    baseDashSpeed: 20
+    baseDashDuration: 0.2
+    baseDashCooldown: 1.5
+    moveSpeedModifier: 0
+    accelerationModifier: 0
+    dashSpeedModifier: 0
+    dashDurationModifier: 0
+    dashCooldownModifier: 0
+    baseRange: 50
+    baseDamage: 50
+    baseArea: 0.2
+    baseAttackSpeed: 0.1
+    rangeModifier: 0
+    damageModifier: 0
+    areaModifier: 0
+    attackSpeedModifier: 0
 --- !u!4 &6312587809061791640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1548209632068345489, guid: e9e1d18d122ba154190c4d3fb3747362, type: 3}

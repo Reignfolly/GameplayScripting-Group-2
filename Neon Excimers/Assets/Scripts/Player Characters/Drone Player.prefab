@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2260314513442525074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5216297950802292273, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_Name
+      value: Drone Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.Name
+      value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.baseRange
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.baseDamage
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.Description
+      value: Flying, fast, and deadly.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.baseDashSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.baseMoveSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.baseAttackSpeed
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.baseAcceleration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5948175142645976053, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: PlayerCharacterStats.baseDashCooldown
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312587809061791640, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470634640719620237, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: Max_Health
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470634640719620237, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}
+      propertyPath: Current_Health
+      value: 75
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72e98d3801c27ff409f507d8b1a6cbf2, type: 3}

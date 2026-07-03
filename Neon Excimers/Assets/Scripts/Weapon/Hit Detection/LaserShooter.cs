@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
 
 public class LaserShooter : MonoBehaviour
 {
@@ -188,15 +189,23 @@ public class LaserShooter : MonoBehaviour
         // The laser should end at the nth (PenetrationFactor) enemy or to its maximum range
 
         Vector3 Middle = start + direction * (Maximum_Full_Laser_Range / 2);
+
+        // Search for ALL enemies hit by the normal laser
         RaycastHit[] Searching_For_Last_Enemy_Hit_NormalLaser;
         Searching_For_Last_Enemy_Hit_NormalLaser = Physics.RaycastAll(start, direction, range, ~IgnoreThisLayer);
 
+
+        // Search for ALL enemies hit by the far laser
         RaycastHit[] Searching_For_Last_Enemy_Hit_FarLaser;
         Searching_For_Last_Enemy_Hit_FarLaser = Physics.RaycastAll(start, direction, Maximum_Full_Laser_Range, ~IgnoreThisLayer);
         
         // 4.1: Normal laser render
         if (All_Enemies_Hit.Count > 0 && Stop_At_Last_Enemy == true)
         {
+
+            var Normal_Laser_Hit_LastEnemy = false;
+
+            // Loop Through normal laser, figure out where the laser should end.
             for (int i = 0; i < Searching_For_Last_Enemy_Hit_NormalLaser.Length; i++)
             {
                 RaycastHit_Comparable Last_Enemy_Hit = All_Enemies_Hit[new_I];
@@ -204,16 +213,18 @@ public class LaserShooter : MonoBehaviour
 
                 if (GameObject.ReferenceEquals(newObjHit, Last_Enemy_Hit))
                 {
+                    // End at the enemy's position since there's only 1 enemy.
                     end = newObjHit.point;
                     SpawnLaser(start, end);
-                } else
-                {
-                    SpawnLaser(start, Middle);
-                    SpawnFarLaser(Middle, end);
+                    Normal_Laser_Hit_LastEnemy = true;
+                    break;
                 }
         
             }
 
+
+            var Far_Laser_Hit_LastEnemy = false;
+            // Loop Through far laser, figure out where the far laser should end
             for (int i = 0; i < Searching_For_Last_Enemy_Hit_FarLaser.Length; i++)
             {
                 RaycastHit_Comparable Last_Enemy_Hit = All_Enemies_Hit[new_I];
@@ -224,10 +235,11 @@ public class LaserShooter : MonoBehaviour
                     end = newObjHit.point;
                     SpawnLaser(start, Middle);
                     SpawnFarLaser(Middle, end);
+                    break;
                 } else
                 {
                     SpawnLaser(start, Middle);
-            SpawnFarLaser(Middle, end);
+                    SpawnFarLaser(Middle, end);
                 }
         
             }
@@ -344,6 +356,15 @@ public class LaserShooter : MonoBehaviour
 
         GameObject FireSound = Instantiate(LaserFireSoundPrefab);
         FireSound.transform.position = this.gameObject.transform.position;
+        Debug.Log("Normal Laser fire!");
+    }
+
+    void SpawnPenetratingLaser(Vector3 start, Vector3 end)
+    {
+        GameObject laser = Instantiate(laserPrefab);
+
+        LaserBeam beam = laser.GetComponent<LaserBeam>();
+        beam.Initialize(start, end, width, duration);
     }
 
     void SpawnFarLaser(Vector3 start, Vector3 end)
@@ -352,6 +373,7 @@ public class LaserShooter : MonoBehaviour
 
         LaserBeam beam = laser.GetComponent<LaserBeam>();
         beam.Initialize(start, end, width, duration);
+        Debug.Log("Far Laser fire!");
     }
 
     void spawnWeaponEffects(Vector3 HitPoint)

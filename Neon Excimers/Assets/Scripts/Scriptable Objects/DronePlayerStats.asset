@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6e0dd1c33c5ff41988a319d01a6d3c, type: 3}
+  m_Name: DronePlayerStats
+  m_EditorClassIdentifier: 
+  KillCount: 2
+  baseMoveSpeed: 25
+  baseAcceleration: 25
+  baseDashSpeed: 50
+  baseDashDuration: 0.4
+  baseDashCooldown: 0.75
+  moveSpeedModifier: 0
+  accelerationModifier: 0
+  dashSpeedModifier: 0
+  dashDurationModifier: 0
+  dashCooldownModifier: 0
